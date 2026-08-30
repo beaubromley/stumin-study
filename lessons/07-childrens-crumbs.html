@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Children's Crumbs &middot; StuMin Study</title>
+<meta name="description" content="Because Jesus accepts and heals us, we can accept and love others.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 26 &middot; Session 3</p>
+<h1>The Children's Crumbs</h1>
+<div class="mainpoint">Because Jesus accepts and heals us, we can accept and love others.</div>
+<p class="meta">skipped &middot; Matthew 15; Mark 7 &middot; <a href="https://drive.google.com/file/d/1qbS_XZLpawgLjDh84SAJLsRh5--Myj35/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Brings Us Out of Darkness</div>
+<div class="ref">Mark 7:24-30<a href="https://www.biblegateway.com/passage/?search=Mark+7:24-30&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">24</span>From there he arose, and went away into the borders of Tyre and Sidon. He entered into a house, and didn’t want anyone to know it, but he couldn’t escape notice. <span class="v">25</span>For a woman, whose little daughter had an unclean spirit, having heard of him, came and fell down at his feet. <span class="v">26</span>Now the woman was a Greek, a Syrophoenician by race. She begged him that he would cast the demon out of her daughter. <span class="v">27</span>But Jesus said to her,
+“Let the children be filled first, for it is not appropriate to take the children’s bread and throw it to the dogs.” <span class="v">28</span>But she answered him, “Yes, Lord. Yet even the dogs under the table eat the children’s crumbs.” <span class="v">29</span>He said to her,
+“For this saying, go your way. The demon has gone out of your daughter.” <span class="v">30</span>She went away to her house, and found the child having been laid on the bed, with the demon gone out. </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Jesus Heals Us</div>
+<div class="ref">Mark 7:31-37<a href="https://www.biblegateway.com/passage/?search=Mark+7:31-37&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">31</span>Again he departed from the borders of Tyre and Sidon, and came to the sea of Galilee, through the middle of the region of Decapolis. <span class="v">32</span>They brought to him one who was deaf and had an impediment in his speech. They begged him to lay his hand on him. <span class="v">33</span>He took him aside from the multitude, privately, and put his fingers into his ears, and he spat, and touched his tongue. <span class="v">34</span>Looking up to heaven, he sighed, and said to him,
+“Ephphatha!”
+ that is,
+“Be opened!” <span class="v">35</span>Immediately his ears were opened, and the impediment of his tongue was released, and he spoke clearly. <span class="v">36</span>He commanded them that they should tell no one, but the more he commanded them, so much the more widely they proclaimed it. <span class="v">37</span>They were astonished beyond measure, saying, “He has done all things well. He makes even the deaf hear, and the mute speak!” </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Jesus deliberately leaves Jewish territory for Tyre and Sidon — Gentile coastal cities in Phoenician Syria. Hostility between these peoples ran back centuries, to the Syro-Ephraimite war around 735 BC, when Syria and Israel attacked Judah and Ahaz refused to trust God, calling Assyria for help instead. The long fallout ended in exile and a question: would God actually keep His promise to David's house?</p>
+<p>That is the region this woman comes from. She is, in the memory of Jesus's people, the wrong nationality from the wrong history.</p>
+<p>So when a Gentile woman from Phoenician Syria receives what she asks for, the answer to that centuries-old question is standing in front of her. Isaiah's promised son named Immanuel turns out to be for her too.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Mark 7:24</div><p>He entered a house and wanted no one to know — "yet he could not be hidden." His reputation had already crossed the border ahead of Him.</p></div>
+<div class="cmt"><div class="ref">Mark 7:26</div><p>Mark names her three ways: a woman, a Gentile, a Syrophoenician. Every label marks distance. She comes anyway and falls at His feet.</p></div>
+<div class="cmt"><div class="ref">Mark 7:27</div><p>"Let the children be fed first." The word for dogs here is a diminutive — household dogs, not street scavengers. "First" implies a sequence, not a closed door: the gospel comes to Israel first and then to the nations (Romans 1:16).</p></div>
+<div class="cmt"><div class="ref">Mark 7:28</div><p>She doesn't dispute the image; she works inside it. If she is a dog under the table, then crumbs are exactly what she is asking for. It is the only exchange in the Gospels where someone answers Jesus back and He commends the reply.</p></div>
+<div class="cmt"><div class="ref">Mark 7:31-37</div><p>Then a deaf man with a speech impediment. Jesus takes him aside, away from the crowd, touches him, sighs, and speaks one Aramaic word — Ephphatha, "be opened." The crowd's verdict quotes Isaiah 35: the deaf hear and the mute speak.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>How do you think this woman felt approaching Jesus? What stops us from doing the same?</summary><div class="ans">She risked rejection and humiliation for her daughter. We hold back because we forget He loves us, think we can manage it ourselves, doubt He'll act, or fear how it looks. Sometimes we asked before and felt ignored, so we stopped asking.</div></details>
+<details class="q"><summary>How do Jesus's words in v. 27 land on you? Why respond that way?</summary><div class="ans">They sting, and they're meant to be wrestled with in context. Most Jews of the day assumed the Messiah was for them alone — likely including some of the disciples watching. Jesus voices the expectation and then demolishes it, teaching His watching disciples that superiority has no place in God's heart. He is the Savior of all.</div></details>
+<details class="q"><summary>Who are the "outsiders" in your world? What's our role?</summary><div class="ans">The people who don't fit our boxes — different, disagreeable, hard to be around. Culture trains us into us-versus-them early. Genesis 1:27 says they bear God's image. In the Gospels Jesus consistently moves toward such people, and our job is to welcome rather than tolerate at a distance.</div></details>
+<details class="q"><summary>What stands out about how Jesus healed the deaf man?</summary><div class="ans">He could have done it from anywhere. Instead He took him aside, away from the crowd, and used touch a man like this had likely been denied for years. Jesus doesn't treat people like projects.</div></details>
+<details class="q"><summary>Where's the hope in this passage when brokenness is everywhere?</summary><div class="ans">One word was enough — no follow-up appointment, no second procedure. His healings are previews of a world where everything wrong is made right. That's the direction all of this is heading.</div></details>
+<details class="q"><summary>What do you need healed?</summary><div class="ans">Hard to say out loud. The cross deals with sin decisively; He also cares about everything else sin has broken — bodies, minds, families. Matthew 11:28 is an open invitation, not a formality.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>In Gentile territory, a Syrophoenician woman begs Jesus to free her daughter from a demon. His reply about children and dogs draws a sharp answer of faith from her, and He grants her request. Returning through the Decapolis, He heals a deaf man with a speech impediment, and the crowd declares that He does all things well.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>The gospel to the Jew first and also to the Gentile — this scene is the hinge in narrative form.</li>
+<li>Faith found where the religious insiders assumed it could not be, a recurring reversal in the Gospels.</li>
+<li>Healing as a foretaste of new creation, quoting Isaiah's picture of the age to come.</li>
+<li>Identity redefined: outsiders brought in as members of God's household (Ephesians 2:19).</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Was Jesus being cruel or prejudiced?</p><p>This is the sharpest saying in the Gospels and readers have wrestled with it for centuries. Options: He was voicing the prevailing view in order to overturn it for the watching disciples; He was testing and drawing out a faith He intended to honor publicly; or the diminutive "little dogs" and the word "first" already signal a sequence rather than a rejection. What is not in dispute is the outcome — He heals her daughter and praises her answer.</p></div>
+<div class="hardq"><p class="t">Did Jesus change His mind?</p><p>It reads that way. Some argue for genuine development within His human ministry; others that He knew where the conversation was going and was drawing out her faith for everyone else's benefit. The text reports the exchange without explaining His interior state.</p></div>
+<div class="hardq"><p class="t">Demon possession</p><p>The Gospels distinguish possession from ordinary illness, and Jesus treats it as a real personal power rather than a first-century label for mental illness. Modern readers understandably find this difficult; the accounts are consistent that something is being cast out.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">κυνάρια</span><span class="translit">kynaria</span><span class="lang">Greek</span><p>"Dogs" — a diminutive form, household pets rather than the feral scavengers the term usually implied as an insult. The choice of word softens the saying, though it does not remove its edge.</p></div>
+<div class="word"><span class="term">πρῶτον</span><span class="translit">prōton</span><span class="lang">Greek</span><p>"Let the children be fed first." A word about order, not exclusion — the same logic Paul states in Romans 1:16.</p></div>
+<div class="word"><span class="term">Ἐφφαθά</span><span class="translit">Ephphatha</span><span class="lang">Aramaic</span><p>"Be opened." Mark preserves the actual Aramaic Jesus spoke and then translates it — one of a handful of places we hear His own language.</p></div>
+<div class="word"><span class="term">ἐστέναξεν</span><span class="translit">estenaxen</span><span class="lang">Greek</span><p>"He sighed" — a deep groan. The same root Paul uses in Romans 8:22-23 for creation groaning under the fall. Jesus feels the wrongness of what He is undoing.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Isaiah+7:14&version=ESV" target="_blank" rel="noopener">Isaiah 7:14</a></div><div class="n">The promised son named Immanuel — the thread the Context traces to this Gentile region.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Isaiah+35:5-6&version=ESV" target="_blank" rel="noopener">Isaiah 35:5-6</a></div><div class="n">The deaf hearing and the mute singing; the crowd's reaction quotes this hope.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Romans+1:16&version=ESV" target="_blank" rel="noopener">Romans 1:16</a></div><div class="n">"To the Jew first and also to the Greek" — the sequence stated plainly.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Ephesians+2:11-19&version=ESV" target="_blank" rel="noopener">Ephesians 2:11-19</a></div><div class="n">Gentiles once far off, now brought near and made members of the household.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Matthew+15:21-28&version=ESV" target="_blank" rel="noopener">Matthew 15:21-28</a></div><div class="n">The parallel account, where Jesus commends her "great faith."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Matthew+11:28&version=ESV" target="_blank" rel="noopener">Matthew 11:28</a></div><div class="n">The standing invitation to bring what is heavy.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="06-walking-on-the-sea.html"><span class="dir">Previous</span>Walking on the Sea</a>
+<a class="nx" href="08-resurrection-and-life.html"><span class="dir">Next</span>Resurrection and Life</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

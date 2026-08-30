@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Faith Has Saved You &middot; StuMin Study</title>
+<meta name="description" content="Jesus doesn't turn us away when we go to Him in faith.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 25 &middot; Session 4</p>
+<h1>Your Faith Has Saved You</h1>
+<div class="mainpoint">Jesus doesn't turn us away when we go to Him in faith.</div>
+<p class="meta">2026-09-06 &middot; Matthew 9; Mark 5; Luke 8 &middot; <a href="https://drive.google.com/file/d/1jQBIH0dxLywUebZTOcBt5T6mbbXXYEYt/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">We Can Take Our Desperation to Jesus</div>
+<div class="ref">Luke 8:40-45<a href="https://www.biblegateway.com/passage/?search=Luke+8:40-45&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">40</span>When Jesus returned, the multitude welcomed him, for they were all waiting for him. <span class="v">41</span>Behold, there came a man named Jairus, and he was a ruler of the synagogue. He fell down at Jesus’ feet, and begged him to come into his house, <span class="v">42</span>for he had an only daughter, about twelve years of age, and she was dying. But as he went, the multitudes pressed against him. <span class="v">43</span>A woman who had a flow of blood for twelve years, who had spent all her living on physicians, and could not be healed by any, <span class="v">44</span>came behind him, and touched the fringe of his cloak, and immediately the flow of her blood stopped. <span class="v">45</span>Jesus said,
+“Who touched me?”
+When all denied it, Peter and those with him said, “Master, the multitudes press and jostle you, and you say,
+‘Who touched me?’” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Our Faith Saves Us</div>
+<div class="ref">Luke 8:46-56<a href="https://www.biblegateway.com/passage/?search=Luke+8:46-56&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">46</span>But Jesus said,
+“Someone did touch me, for I perceived that power has gone out of me.” <span class="v">47</span>When the woman saw that she was not hidden, she came trembling, and falling down before him declared to him in the presence of all the people the reason why she had touched him, and how she was healed immediately. <span class="v">48</span>He said to her,
+“Daughter, cheer up. Your faith has made you well. Go in peace.” <span class="v">49</span>While he still spoke, one from the ruler of the synagogue’s house came, saying to him, “Your daughter is dead. Don’t trouble the Teacher.” <span class="v">50</span>But Jesus hearing it, answered him,
+“Don’t be afraid. Only believe, and she will be healed.” <span class="v">51</span>When he came to the house, he didn’t allow anyone to enter in, except Peter, John, James, the father of the child, and her mother. <span class="v">52</span>All were weeping and mourning her, but he said,
+“Don’t weep. She isn’t dead, but sleeping.” <span class="v">53</span>They were ridiculing him, knowing that she was dead. <span class="v">54</span>But he put them all outside, and taking her by the hand, he called, saying,
+“Child, arise!” <span class="v">55</span>Her spirit returned, and she rose up immediately. He commanded that something be given to her to eat. <span class="v">56</span>Her parents were amazed, but he commanded them to tell no one what had been done. </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Luke braids two stories together. Jairus is a synagogue ruler — respectable, known, and taking a public risk by falling at Jesus's feet while religious leaders were lining up against Him. The woman is unnamed, broke after twelve years of doctors, and ceremonially unclean.</p>
+<p>Her condition was not only medical. Under Levitical law, ongoing bleeding made her unclean, and anyone she touched became unclean too. Twelve years of that means twelve years outside worship and normal community life.</p>
+<p>By the law's logic, her touch should have contaminated Jesus. It runs the other way. He is not made unclean; she is made whole. That reversal is the hinge of the passage.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Luke 8:41-42</div><p>Jairus's daughter is twelve years old; the woman has bled for twelve years. Luke sets the number down twice on purpose — one life beginning, one life stalled, both restored in the same afternoon.</p></div>
+<div class="cmt"><div class="ref">Luke 8:44</div><p>She reaches for the fringe of His garment — the tassels an observant Jewish man wore under Numbers 15:38-39. She approaches from behind, intending to take healing and disappear.</p></div>
+<div class="cmt"><div class="ref">Luke 8:45-47</div><p>Jesus's question isn't for information. He stops a crowd, and a delay that will cost Jairus his daughter's life, so that she doesn't leave healed but still anonymous and ashamed.</p></div>
+<div class="cmt"><div class="ref">Luke 8:48</div><p>"Daughter." The only time in the Gospels Jesus addresses a woman this way. Twelve years of exclusion end with a word of belonging, and "go in peace" is shalom — restored wholeness, not just an absence of symptoms.</p></div>
+<div class="cmt"><div class="ref">Luke 8:50-55</div><p>"Do not fear; only believe," spoken to a man who has just been told it's over. The mourners laugh. Jesus calls death sleep — not a denial of the death but a claim about how temporary it is in His presence.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>What does it mean to be desperate, and where do you go when you get there?</summary><div class="ans">Desperation is hopelessness that drives you to do something drastic. Both of these people ran to Jesus. Most of us run somewhere with less power — a screen, a substance, a distraction. Those can numb; they cannot save.</div></details>
+<details class="q"><summary>Why did Jesus stop and ask who touched Him?</summary><div class="ans">Not confusion. He wanted her, not just her healing. He refused to let her leave as an anonymous rule-breaker — He called her daughter in front of the crowd that had excluded her.</div></details>
+<details class="q"><summary>What does it mean that Jesus stopped for both a shunned woman and a synagogue ruler?</summary><div class="ans">He crosses the whole social range in one scene. Status doesn't earn His attention and disgrace doesn't forfeit it. He was more concerned with drawing people in than with the purity rules that kept them out.</div></details>
+<details class="q"><summary>He said her faith saved her. What kind of faith is that?</summary><div class="ans">Not believing Jesus existed — believing He was who He claimed and could do what He promised. Confessing Him as Lord (Romans 10:9-13), which starts a relationship that keeps changing you.</div></details>
+<details class="q"><summary>What kept Jairus believing after the news arrived?</summary><div class="ans">He had just watched Jesus heal an incurable woman on the way. If that, then why not this? Notice the order of events — Luke arranges it so Jairus sees the greater case before he hears the worse news.</div></details>
+<details class="q"><summary>Do you struggle to be honest with God about your fears?</summary><div class="ans">The woman tried to slip away unnoticed and trembled when she was found. Shame keeps us quiet. What she got was not a reprimand but a name — and He does not turn away people who come to Him.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>On his way to heal a synagogue ruler's dying daughter, Jesus is interrupted by a woman who has bled for twelve years and touches His garment in the crowd. He stops, draws her out, calls her daughter, and sends her in peace — then arrives at Jairus's house after the girl has died and raises her.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>Clean and unclean reversed: contact with Jesus purifies rather than contaminating, which anticipates the whole logic of the cross.</li>
+<li>Faith as the thread linking two people who share nothing else — status, gender, or reputation.</li>
+<li>Jesus's authority extending past sickness to death itself, preparing the reader for chapter 24.</li>
+<li>Interruption as ministry, not obstacle. The delay that costs Jairus everything is where the woman is restored — and Jesus handles both.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Did power leave Jesus automatically, without His consent?</p><p>"I perceive that power has gone out from me" can sound mechanical, as if the healing were magic tapped by touch. But He immediately makes it personal, and He credits her faith, not the fabric. The text presents an intentional act, not a leak.</p></div>
+<div class="hardq"><p class="t">"She is not dead but sleeping."</p><p>The mourners laugh because she was plainly dead. Jesus isn't correcting their diagnosis; He's stating what death amounts to when He is standing in the room. The New Testament goes on to use "sleep" for the death of believers (1 Thessalonians 4:13-14).</p></div>
+<div class="hardq"><p class="t">Why the command to tell no one?</p><p>Luke 8:56 has Jesus ordering silence right after a very public miracle. Mark's Gospel does this repeatedly. The usual explanation is timing — a reputation as a wonder-worker would have accelerated a confrontation, and distorted the kind of Messiah people expected.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">σέσωκέν σε</span><span class="translit">sesōken se</span><span class="lang">Greek</span><p>"Your faith has made you well" — the verb is sōzō, "to save." The same word covers physical rescue and salvation from sin, and Luke is almost certainly using both senses. Hence the lesson's title.</p></div>
+<div class="word"><span class="term">κράσπεδον</span><span class="translit">kraspedon</span><span class="lang">Greek</span><p>The "fringe" or tassel of His cloak — the tzitzit commanded in Numbers 15:38-39 as a reminder of the commandments. She reached for the part of Him that signified covenant faithfulness.</p></div>
+<div class="word"><span class="term">θυγάτηρ</span><span class="translit">thygatēr</span><span class="lang">Greek</span><p>"Daughter." A term of belonging in a culture where she had been formally excluded. It is also the word used of Jairus's child, tying the two stories with one noun.</p></div>
+<div class="word"><span class="term">εἰρήνη</span><span class="translit">eirēnē</span><span class="lang">Greek</span><p>"Go in peace" renders the Hebrew shalom — not calm feelings but restored wholeness, back inside the community and its worship.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Leviticus+15:25-27&version=ESV" target="_blank" rel="noopener">Leviticus 15:25-27</a></div><div class="n">The purity law that governed her twelve years.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Numbers+15:38-39&version=ESV" target="_blank" rel="noopener">Numbers 15:38-39</a></div><div class="n">The commanded fringe she reached for.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Mark+5:21-43&version=ESV" target="_blank" rel="noopener">Mark 5:21-43; Matthew 9:18-26</a></div><div class="n">The parallel accounts; Mark's is the fullest.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Romans+10:9-13&version=ESV" target="_blank" rel="noopener">Romans 10:9-13</a></div><div class="n">Confessing Jesus as Lord — the faith He commends here, defined.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=James+4:8&version=ESV" target="_blank" rel="noopener">James 4:8</a></div><div class="n">Draw near to God and He draws near to you.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=1+Thessalonians+4:13-14&version=ESV" target="_blank" rel="noopener">1 Thessalonians 4:13-14</a></div><div class="n">Death as sleep for those who belong to Him.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="03-wind-and-sea-obey.html"><span class="dir">Previous</span>The Wind and the Sea Obey</a>
+<a class="nx" href="05-five-loaves-two-fish.html"><span class="dir">Next</span>Five Loaves and Two Fish</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

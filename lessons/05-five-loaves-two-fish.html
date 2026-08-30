@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Loaves and Two Fish &middot; StuMin Study</title>
+<meta name="description" content="Because of Jesus's authority, we can trust Him to meet all our needs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 26 &middot; Session 1</p>
+<h1>Five Loaves and Two Fish</h1>
+<div class="mainpoint">Because of Jesus's authority, we can trust Him to meet all our needs</div>
+<p class="meta">2026-09-13 &middot; Matthew 14; Mark 6; Luke 9: John 6 &middot; <a href="https://drive.google.com/file/d/1MWcFS4QuV0bTvo4M58OXoIZwjzBp4XIE/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Cares About Our Needs</div>
+<div class="ref">Matthew 14:13-16<a href="https://www.biblegateway.com/passage/?search=Matthew+14:13-16&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">13</span>Now when Jesus heard this, he withdrew from there in a boat, to a deserted place apart. When the multitudes heard it, they followed him on foot from the cities. <span class="v">14</span>Jesus went out, and he saw a great multitude. He had compassion on them, and healed their sick. <span class="v">15</span>When evening had come, his disciples came to him, saying, “This place is deserted, and the hour is already late. Send the multitudes away, that they may go into the villages, and buy themselves food.” <span class="v">16</span>But Jesus said to them,
+“They don’t need to go away. You give them something to eat.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Jesus Has the Power to Meet Our Needs</div>
+<div class="ref">Matthew 14:17-21<a href="https://www.biblegateway.com/passage/?search=Matthew+14:17-21&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">17</span>They told him, “We only have here five loaves and two fish.” <span class="v">18</span>He said,
+“Bring them here to me.” <span class="v">19</span>He commanded the multitudes to sit down on the grass; and he took the five loaves and the two fish, and looking up to heaven, he blessed, broke and gave the loaves to the disciples, and the disciples gave to the multitudes. <span class="v">20</span>They all ate, and were filled. They took up twelve baskets full of that which remained left over from the broken pieces. <span class="v">21</span>Those who ate were about five thousand men, besides women and children. </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Jesus has just heard that Herod executed John the Baptist — His cousin and the man who baptized Him. He withdraws by boat to be alone. The crowd follows on foot around the shore and is waiting when He lands.</p>
+<p>He does not send them away, and Matthew tells us why: He had compassion on them. Grief did not make Him unavailable.</p>
+<p>Matthew also notes it is near Passover, and his Jewish readers would catch the echo immediately: God feeding His people in the wilderness, bread from heaven, more than enough. The one doing the feeding here is not a prophet relaying a message.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Matthew 14:13-14</div><p>Two withdrawals in one verse — Jesus seeking solitude, the crowd refusing to grant it. Compassion here is a gut-level word, not a polite feeling.</p></div>
+<div class="cmt"><div class="ref">Matthew 14:15-16</div><p>The disciples propose the reasonable solution: dismiss them, let them buy their own food. "You give them something to eat" is not a request for a plan. It is an assignment they cannot possibly fill.</p></div>
+<div class="cmt"><div class="ref">Matthew 14:19</div><p>He looks up, blesses, breaks, and gives. Those four verbs reappear at the Last Supper in Matthew 26:26 — the meal is doing more work than it appears.</p></div>
+<div class="cmt"><div class="ref">Matthew 14:20-21</div><p>"All ate and were satisfied," with twelve baskets left — one per disciple, so each of them personally carried the evidence. Counting five thousand men "besides women and children" suggests a crowd two or three times that size.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>Jesus was grieving. How did He respond to the crowd, and what does that show?</summary><div class="ans">He put their needs ahead of His own very real ones. He is not too busy or too depleted for us, and He cared about their hunger as well as their souls — body, mind, and spirit.</div></details>
+<details class="q"><summary>How did the disciples see the people (vv. 15-16)? How do we do the same?</summary><div class="ans">As a logistics problem to be dispatched. We tend to treat needs as inconveniences. Being like Jesus starts with actually seeing people, especially when seeing them will cost us comfort.</div></details>
+<details class="q"><summary>Why did Jesus make the disciples do the feeding?</summary><div class="ans">He didn't need them. He could have spoken a banquet into existence. He used their hands and a boy's lunch (John 6:9) so they would learn what happens to what you put in His hands: it multiplies and reaches further than you could send it.</div></details>
+<details class="q"><summary>How do the disciples size up Jesus's power in v. 17? How do we?</summary><div class="ans">They counted what they could see: five loaves, two fish, not enough. They had already watched Him turn water to wine and cast out demons. We do the same — we budget God's options by our visible resources.</div></details>
+<details class="q"><summary>Why bless the food first?</summary><div class="ans">Jesus modeled dependence on the Father. The meal was not human generosity stretched thin; it was divine provision. Every good gift comes from above (James 1:17), and He said so before He handed out a single loaf.</div></details>
+<details class="q"><summary>They were "satisfied" — what does being satisfied in Jesus look like, and why is it hard?</summary><div class="ans">Looking nowhere else for contentment. It frees you from comparison and from chasing things that can't fill. It's hard because we half-believe we need Jesus plus something else. Note that this crowd was hungry again within days (Matthew 15:32).</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Grieving John the Baptist's execution, Jesus withdraws but is met by a crowd. Moved with compassion, He heals their sick and then feeds more than five thousand people from five loaves and two fish, with twelve baskets left over.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>New exodus: God feeding His people in a desolate place, as He did with manna, marks Jesus as more than another prophet.</li>
+<li>Compassion that costs — Jesus ministers out of grief rather than waiting until He has recovered.</li>
+<li>God's habit of working through inadequate offerings placed in His hands.</li>
+<li>Physical need taken seriously as a signpost to spiritual need. John 6 makes the connection explicit: He is the bread of life.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Is this a 'sharing miracle'?</p><p>A popular reading says the real miracle was that the crowd, shamed by a boy's generosity, produced hidden lunches. All four Gospels present a multiplication, the leftovers exceed the original supply, and John 6:14 records the crowd concluding a genuine sign occurred. The text does not support the softened version.</p></div>
+<div class="hardq"><p class="t">Why doesn't God always meet physical needs this way?</p><p>The miracle proves capacity, not policy. Believers starve, and Scripture does not explain that away. What it holds out is a Father who gives good gifts (Matthew 7:11) and a promised end to hunger (Revelation 7:16), not a guarantee against want now.</p></div>
+<div class="hardq"><p class="t">The only miracle in all four Gospels</p><p>Matthew, Mark, Luke, and John all record this feeding — a rare unanimity. That agreement is a substantial piece of the historical case for the event.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">ἐσπλαγχνίσθη</span><span class="translit">esplanchnisthē</span><span class="lang">Greek</span><p>"He had compassion" — from splanchna, the inner organs. The Greek locates the feeling in the gut. It is visceral, not sentimental.</p></div>
+<div class="word"><span class="term">ἐχορτάσθησαν</span><span class="translit">echortasthēsan</span><span class="lang">Greek</span><p>"Were satisfied." The verb is used of livestock fed to fullness. Not a taste — a real meal.</p></div>
+<div class="word"><span class="term">ἔρημος τόπος</span><span class="translit">erēmos topos</span><span class="lang">Greek</span><p>"A desolate place." The same wilderness vocabulary as the exodus wanderings, which is why the manna echo would have been obvious.</p></div>
+<div class="word"><span class="term">εὐλόγησεν</span><span class="translit">eulogēsen</span><span class="lang">Greek</span><p>"He said a blessing." In Jewish practice the blessing is directed to God, not to the food — thanking the Giver rather than enchanting the bread.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Exodus+16:1-18&version=ESV" target="_blank" rel="noopener">Exodus 16:1-18</a></div><div class="n">Manna in the wilderness — everyone gathered enough, no one lacked.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=2+Kings+4:42-44&version=ESV" target="_blank" rel="noopener">2 Kings 4:42-44</a></div><div class="n">Elisha feeding a hundred from twenty loaves, with leftovers. Jesus's sign is the same shape, scaled up.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=John+6:1-15,+35&version=ESV" target="_blank" rel="noopener">John 6:1-15, 35</a></div><div class="n">John's account plus the discourse that interprets it: "I am the bread of life."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Matthew+26:26&version=ESV" target="_blank" rel="noopener">Matthew 26:26</a></div><div class="n">Took, blessed, broke, gave — the same four verbs at the Last Supper.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+23:1&version=ESV" target="_blank" rel="noopener">Psalm 23:1</a></div><div class="n">The shepherd whose people do not want; Mark notes they were like sheep without one.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Philippians+4:19&version=ESV" target="_blank" rel="noopener">Philippians 4:19</a></div><div class="n">God supplying every need according to His riches.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="04-your-faith-has-saved-you.html"><span class="dir">Previous</span>Your Faith Has Saved You</a>
+<a class="nx" href="06-walking-on-the-sea.html"><span class="dir">Next</span>Walking on the Sea</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

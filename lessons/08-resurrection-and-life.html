@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resurrection and Life &middot; StuMin Study</title>
+<meta name="description" content="Because Jesus has authority over life and death, we can trust Him entirely.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 26 &middot; Session 4</p>
+<h1>Resurrection and Life</h1>
+<div class="mainpoint">Because Jesus has authority over life and death, we can trust Him entirely.</div>
+<p class="meta">2026-09-27 &middot; John 11 &middot; <a href="https://drive.google.com/file/d/14DNBLNE4yk_iw-fmFZG4p1xNuONEzmM9/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Death Stings Now</div>
+<div class="ref">John 11:17-37<a href="https://www.biblegateway.com/passage/?search=John+11:17-37&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">17</span>So when Jesus came, he found that he had been in the tomb four days already. <span class="v">18</span>Now Bethany was near Jerusalem, about fifteen stadia away. <span class="v">19</span>Many of the Jews had joined the women around Martha and Mary, to console them concerning their brother. <span class="v">20</span>Then when Martha heard that Jesus was coming, she went and met him, but Mary stayed in the house. <span class="v">21</span>Therefore Martha said to Jesus, “Lord, if you would have been here, my brother wouldn’t have died. <span class="v">22</span>Even now I know that, whatever you ask of God, God will give you.” <span class="v">23</span>Jesus said to her,
+“Your brother will rise again.” <span class="v">24</span>Martha said to him, “I know that he will rise again in the resurrection at the last day.” <span class="v">25</span>Jesus said to her,
+“I am the resurrection and the life. He who believes in me will still live, even if he dies. <span class="v">26</span>Whoever lives and believes in me will never die. Do you believe this?” <span class="v">27</span>She said to him, “Yes, Lord. I have come to believe that you are the Christ, God’s Son, he who comes into the world.” <span class="v">28</span>When she had said this, she went away, and called Mary, her sister, secretly, saying, “The Teacher is here, and is calling you.” <span class="v">29</span>When she heard this, she arose quickly, and went to him. <span class="v">30</span>Now Jesus had not yet come into the village, but was in the place where Martha met him. <span class="v">31</span>Then the Jews who were with her in the house, and were consoling her, when they saw Mary, that she rose up quickly and went out, followed her, saying, “She is going to the tomb to weep there.” <span class="v">32</span>Therefore when Mary came to where Jesus was, and saw him, she fell down at his feet, saying to him, “Lord, if you would have been here, my brother wouldn’t have died.” <span class="v">33</span>When Jesus therefore saw her weeping, and the Jews weeping who came with her, he groaned in the spirit, and was troubled, <span class="v">34</span>and said,
+“Where have you laid him?”
+They told him, “Lord, come and see.” <span class="v">35</span>Jesus wept. <span class="v">36</span>The Jews therefore said, “See how much affection he had for him!” <span class="v">37</span>Some of them said, “Couldn’t this man, who opened the eyes of him who was blind, have also kept this man from dying?” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Death Has Lost</div>
+<div class="ref">John 11:38-44<a href="https://www.biblegateway.com/passage/?search=John+11:38-44&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">38</span>Jesus therefore, again groaning in himself, came to the tomb. Now it was a cave, and a stone lay against it. <span class="v">39</span>Jesus said,
+“Take away the stone.”
+Martha, the sister of him who was dead, said to him, “Lord, by this time there is a stench, for he has been dead four days.” <span class="v">40</span>Jesus said to her,
+“Didn’t I tell you that if you believed, you would see God’s glory?” <span class="v">41</span>So they took away the stone from the place where the dead man was lying. Jesus lifted up his eyes, and said,
+“Father, I thank you that you listened to me. <span class="v">42</span>I know that you always listen to me, but because of the multitude standing around I said this, that they may believe that you sent me.” <span class="v">43</span>When he had said this, he cried with a loud voice,
+“Lazarus, come out!” <span class="v">44</span>He who was dead came out, bound hand and foot with wrappings, and his face was wrapped around with a cloth.
+Jesus said to them,
+“Free him, and let him go.” </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>A common belief in the ancient Near East held that the soul lingered near the body for three days. By day four, hope was formally over. John notes the four days twice — Lazarus is not borderline, he is unambiguously dead.</p>
+<p>Bethany was about two miles from Jerusalem, close enough that a crowd of mourners from the city had come out. Whatever happens here happens in front of witnesses.</p>
+<p>This is the last and greatest of the signs in John's Gospel before the cross, and it is the one that sets the plot against Jesus in motion. Raising a man from the dead is what finally makes killing Him urgent.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">John 11:21-22</div><p>Martha's "if you had been here" is grief and faith at once, and then: "but even now." She hasn't stopped believing; she just can't see the shape of it.</p></div>
+<div class="cmt"><div class="ref">John 11:25-26</div><p>"I am the resurrection and the life." Martha believes in a resurrection on the last day — correct theology. Jesus moves the category from an event on a calendar to a person standing in front of her.</p></div>
+<div class="cmt"><div class="ref">John 11:33-35</div><p>"Deeply moved" translates a word with anger in it. He is not merely sad; something in Him is indignant at death. And then the shortest verse in the Bible — the Lord of life weeping at a graveside He is about to empty.</p></div>
+<div class="cmt"><div class="ref">John 11:39-40</div><p>Martha objects about the odor. She had confessed faith seventeen verses earlier and now stands at the tomb doing the math. Belief and reality collide, and Jesus doesn't disqualify her for it.</p></div>
+<div class="cmt"><div class="ref">John 11:43-44</div><p>He does not ask or hope. He commands, and Lazarus obeys — bound hand and foot, walking. The last instruction is given to the living: "Unbind him, and let him go."</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>How did Mary and Martha react to the delay?</summary><div class="ans">Martha said "even now" — grief with a door still open. Mary said the same first sentence and stopped there. Some of us reach for God's sovereignty when things don't make sense; some of us are flattened by sorrow and doubt. He didn't scold either of them.</div></details>
+<details class="q"><summary>Why did Jesus weep if He knew what He was about to do?</summary><div class="ans">Because He is fully human and death genuinely grieved Him, because sin's damage to His creation makes Him indignant, and because the people He loved still didn't understand who He was. Knowing the ending doesn't cancel the grief of the middle.</div></details>
+<details class="q"><summary>Read v. 37. When have you thought God could have prevented suffering and didn't?</summary><div class="ans">Everyone eventually does. Some things worth holding: God made a good world, and the brokenness traces to human rebellion (Genesis 3); we're all under sin's verdict (Romans 3:10, 6:23); and God often reveals Himself in suffering rather than around it (Job 42:5). He doesn't waste it — and He stepped into it Himself.</div></details>
+<details class="q"><summary>What does Martha's comment about the odor reveal?</summary><div class="ans">That faith and experience can pull in opposite directions in the same person. If she struggled with Jesus standing right there, we should expect our own logic to argue with trust.</div></details>
+<details class="q"><summary>What does calling Lazarus out prove about His authority?</summary><div class="ans">He commanded, and death complied. Only God has that authority over life. If death takes orders from Jesus, then death has lost its sting.</div></details>
+<details class="q"><summary>How should that change how we live now?</summary><div class="ans">Believers grieve — Jesus did — but not without hope. Death becomes a doorway rather than an ending. That frees you to live fully committed rather than defensively, and to handle disappointment knowing it isn't final.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Jesus arrives at Bethany four days after Lazarus's death. He meets Martha with the claim "I am the resurrection and the life," weeps with Mary at the tomb, and then calls Lazarus out of the grave in front of a crowd of mourners.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>The seventh and climactic sign in John, pointing to Jesus's own resurrection and triggering the plot to kill Him.</li>
+<li>Resurrection relocated from a doctrine about the future to a person in the present.</li>
+<li>Grief taken seriously — the shortest verse in the Bible sits inside the greatest miracle.</li>
+<li>Glory revealed through what looks like delay and failure, a pattern that culminates at the cross.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Why did Jesus deliberately wait?</p><p>John 11:6 says He stayed two days longer after hearing Lazarus was ill. He states the reason in v. 15 — so that they may believe. That is honest and still hard: the sisters' days of grief were not an accident. Scripture presents purpose in the delay without pretending the delay was painless.</p></div>
+<div class="hardq"><p class="t">What did Lazarus experience?</p><p>The text says nothing, and neither does Lazarus anywhere in Scripture. Any account of what he saw is speculation. Note also that he died again — this is resuscitation to the same life, not resurrection to the new one.</p></div>
+<div class="hardq"><p class="t">Why does raising a man lead to plotting murder?</p><p>John 11:45-53 records the council's reasoning: the movement would grow, Rome would respond, and the nation would suffer. The greatest act of life in the Gospel directly produces the decision to kill Jesus.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">ἐνεβριμήσατο</span><span class="translit">enebrimēsato</span><span class="lang">Greek</span><p>"Deeply moved in his spirit" (v. 33). The word carries anger or snorting indignation — used elsewhere of a stern warning. Jesus is not only sorrowful at the tomb; He is angry at death.</p></div>
+<div class="word"><span class="term">ἐδάκρυσεν</span><span class="translit">edakrysen</span><span class="lang">Greek</span><p>"Jesus wept" — quiet tears, a different word from the loud wailing (klaiō) used of the mourners around Him. His grief is real and not performative.</p></div>
+<div class="word"><span class="term">ἀνάστασις</span><span class="translit">anastasis</span><span class="lang">Greek</span><p>"Resurrection" — literally a standing up again. Jesus does not say He brings it or announces it; He says He is it.</p></div>
+<div class="word"><span class="term">ζωή</span><span class="translit">zōē</span><span class="lang">Greek</span><p>"The life." John's preferred word for the life God gives, running from 1:4 through 20:31 — not merely biological existence.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Ezekiel+37:12-14&version=ESV" target="_blank" rel="noopener">Ezekiel 37:12-14</a></div><div class="n">God opening graves and raising His people — the prophetic picture behind this scene.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Isaiah+26:19&version=ESV" target="_blank" rel="noopener">Isaiah 26:19</a></div><div class="n">"Your dead shall live" — the hope Martha already held.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=John+5:28-29&version=ESV" target="_blank" rel="noopener">John 5:28-29</a></div><div class="n">Jesus's own earlier claim that the dead will hear His voice and come out.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=1+Corinthians+15:20-26&version=ESV" target="_blank" rel="noopener">1 Corinthians 15:20-26</a></div><div class="n">Christ as firstfruits; death as the last enemy destroyed.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Romans+8:22-23&version=ESV" target="_blank" rel="noopener">Romans 8:22-23</a></div><div class="n">Creation groaning, awaiting the redemption of our bodies.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Revelation+21:4&version=ESV" target="_blank" rel="noopener">Revelation 21:4</a></div><div class="n">Death itself abolished — where this sign is pointing.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="07-childrens-crumbs.html"><span class="dir">Previous</span>The Children's Crumbs</a>
+<a class="nx" href="09-now-i-can-see.html"><span class="dir">Next</span>Now I Can See</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

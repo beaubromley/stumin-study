@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Kingdom of Heaven &middot; StuMin Study</title>
+<meta name="description" content="Nothing has more worth than God's kingdom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 25 &middot; Session 2</p>
+<h1>The Kingdom of Heaven</h1>
+<div class="mainpoint">Nothing has more worth than God's kingdom.</div>
+<p class="meta">2026-08-23 &middot; Matthew 13; Mark 4 &middot; <a href="https://drive.google.com/file/d/1OGa2s1BaXGR6pY4BUpV2dZyuAyTzVUKg/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">The Kingdom Is Growing</div>
+<div class="ref">Matthew 13:31-33<a href="https://www.biblegateway.com/passage/?search=Matthew+13:31-33&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">31</span>He set another parable before them, saying,
+“The Kingdom of Heaven is like a grain of mustard seed, which a man took, and sowed in his field; <span class="v">32</span>which indeed is smaller than all seeds. But when it is grown, it is greater than the herbs, and becomes a tree, so that the birds of the air come and lodge in its branches.” <span class="v">33</span>He spoke another parable to them.
+“The Kingdom of Heaven is like yeast, which a woman took, and hid in three measures
+of meal, until it was all leavened.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">The Kingdom Is Priceless</div>
+<div class="ref">Matthew 13:44-46<a href="https://www.biblegateway.com/passage/?search=Matthew+13:44-46&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">44</span>“Again, the Kingdom of Heaven is like treasure hidden in the field, which a man found, and hid. In his joy, he goes and sells all that he has, and buys that field. <span class="v">45</span>“Again, the Kingdom of Heaven is like a man who is a merchant seeking fine pearls, <span class="v">46</span>who having found one pearl of great price, he went and sold all that he had, and bought it. </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Jesus's listeners had been waiting generations for a promised king. The expectation was concrete: a ruler who would restore Israel, break Rome's grip, and give the land back. That is what "kingdom" meant to them.</p>
+<p>Jesus keeps using the phrase and keeps filling it with different content. His kingdom arrives through teaching, healing, and a call to sacrificial love — and Rome stays in power the whole time.</p>
+<p>So these four short parables are doing corrective work. Before you can hear what the kingdom is, you have to let go of what you assumed it would be.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Matthew 13:31-32</div><p>The mustard seed is about disproportion. Something negligible at the start ends up large enough to shelter birds — an image borrowed from Ezekiel 17 and Daniel 4, where great trees stand for kingdoms.</p></div>
+<div class="cmt"><div class="ref">Matthew 13:33</div><p>Leaven works invisibly and thoroughly; you cannot un-leaven dough. Note that leaven is usually a negative image in Scripture — Jesus takes the picture of corruption and flips it into a picture of pervasive growth.</p></div>
+<div class="cmt"><div class="ref">Matthew 13:44</div><p>The man sells everything "in his joy." The cost is real and the transaction is not reluctant. That detail is the whole parable.</p></div>
+<div class="cmt"><div class="ref">Matthew 13:45-46</div><p>The merchant is an expert; he has handled pearls his whole life. He is not fooled. When he liquidates everything for one pearl, it is a professional judgment about worth, not an impulse.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>Why a seed? What does that image tell us about the kingdom?</summary><div class="ans">It is real now but not yet full-grown. Small, unimpressive beginnings are not evidence of failure. The kingdom grows through ordinary people until Christ returns.</div></details>
+<details class="q"><summary>How is God's kingdom unlike earthly kingdoms?</summary><div class="ans">You can't point to it on a map. It's God's reign, not a territory — already here in those who live under His rule, not yet here in its fullness. Both halves matter.</div></details>
+<details class="q"><summary>What makes something priceless, and why is the kingdom in that category?</summary><div class="ans">Worth is what you'd trade everything for. The kingdom is eternal, so nothing here competes with it on a long enough timeline. We struggle because the temporary things are visible and immediate.</div></details>
+<details class="q"><summary>Both men sold everything. Why is joy the emotion, not regret?</summary><div class="ans">They weren't losing; they were upgrading and knew it. Joy is the honest response to a trade that good. Following Jesus costs, but the accounting is not close.</div></details>
+<details class="q"><summary>What competes for first place in your life — and is it even sinful?</summary><div class="ans">Usually not. School, friends, family, and ambition are gifts. They become a problem only in rank order. The question isn't whether they're good, it's whether they've gotten ahead of Christ.</div></details>
+<details class="q"><summary>What would prioritizing the kingdom actually change this week?</summary><div class="ans">Something specific and schedulable: a fixed time in the Word, praying for a friend by name, a conversation you've been avoiding, stepping back from something that has too much of your attention.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Four rapid parables about the kingdom of heaven: it starts small and grows large (mustard seed), spreads invisibly and completely (leaven), and is worth liquidating everything to obtain (hidden treasure, pearl of great price).</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>"Already and not yet" — the kingdom is genuinely present and not yet consummated. This tension runs through the whole New Testament.</li>
+<li>Reversal of expectation: God's rule comes through smallness, hiddenness, and a cross rather than through military power.</li>
+<li>Total allegiance — the kingdom cannot be one holding in a diversified portfolio.</li>
+<li>Continuity with the prophets: Ezekiel and Daniel used great trees for kingdoms, and Jesus deliberately picks up that imagery.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Is this teaching salvation by purchase?</p><p>The men buy the field and the pearl, which sounds like earning. But the parables are about valuation, not payment — what you're willing to release when you see what's worth having. Ephesians 2:8-9 rules out purchase; Luke 14:33 keeps the cost real.</p></div>
+<div class="hardq"><p class="t">Leaven as a positive image</p><p>Elsewhere leaven pictures corruption spreading (Matthew 16:6; 1 Corinthians 5:6-8). Here it pictures the kingdom. Some readers take it as a warning about corruption inside the church instead. The straightforward reading — quiet, total permeation — fits the mustard seed beside it.</p></div>
+<div class="hardq"><p class="t">"Smallest of all seeds"</p><p>The mustard seed isn't botanically the smallest seed on earth. Jesus is using a proverbial expression His hearers already used for tininess, not filing a botanical claim.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">βασιλεία τῶν οὐρανῶν</span><span class="translit">basileia tōn ouranōn</span><span class="lang">Greek</span><p>"Kingdom of heaven." Matthew's characteristic phrase, where Mark and Luke say "kingdom of God." Basileia is closer to "reign" or "rule" than to "realm" — an activity more than a place.</p></div>
+<div class="word"><span class="term">ζύμη</span><span class="translit">zymē</span><span class="lang">Greek</span><p>Leaven — a piece of already-fermented dough worked into a fresh batch. Not packaged yeast. The picture is of something living being introduced and taking over the whole lump.</p></div>
+<div class="word"><span class="term">σάτα τρία</span><span class="translit">sata tria</span><span class="lang">Greek</span><p>"Three measures" of flour — roughly 50 pounds, enough bread for a hundred people. The absurd quantity is part of the joke and part of the point.</p></div>
+<div class="word"><span class="term">μαργαρίτης</span><span class="translit">margaritēs</span><span class="lang">Greek</span><p>Pearl. In the first century pearls outranked gold as a luxury good, which is why the merchant's single-item purchase is credible rather than foolish.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Ezekiel+17:22-24&version=ESV" target="_blank" rel="noopener">Ezekiel 17:22-24; Daniel 4:10-12</a></div><div class="n">Great trees sheltering birds as images of kingdoms — the background to the mustard seed.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Philippians+3:7-8&version=ESV" target="_blank" rel="noopener">Philippians 3:7-8</a></div><div class="n">Paul counting everything loss for the sake of Christ — the pearl parable in autobiography.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Matthew+6:33&version=ESV" target="_blank" rel="noopener">Matthew 6:33</a></div><div class="n">Seek first the kingdom; the promise attached to right ordering.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Luke+14:28-33&version=ESV" target="_blank" rel="noopener">Luke 14:28-33</a></div><div class="n">Counting the cost — the sober companion to the joy of Matthew 13:44.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Revelation+21:1-4&version=ESV" target="_blank" rel="noopener">Revelation 21:1-4</a></div><div class="n">The kingdom in its fullness, which is what makes the trade rational.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="01-secrets-of-the-kingdom.html"><span class="dir">Previous</span>Secrets of the Kingdom</a>
+<a class="nx" href="03-wind-and-sea-obey.html"><span class="dir">Next</span>The Wind and the Sea Obey</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

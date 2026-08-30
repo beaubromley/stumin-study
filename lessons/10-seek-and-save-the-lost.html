@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To Seek and Save the Lost &middot; StuMin Study</title>
+<meta name="description" content="A real encounter with Jesus changes our hearts and our actions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 27 &middot; Session 2</p>
+<h1>To Seek and Save the Lost</h1>
+<div class="mainpoint">A real encounter with Jesus changes our hearts and our actions.</div>
+<p class="meta">2026-10-11 &middot; Luke 19 &middot; <a href="https://drive.google.com/file/d/1lFhXR-oYx3vUPNHuP7juDrk_mYdmbXUZ/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Meets Us Where We Are</div>
+<div class="ref">Luke 19:1-5<a href="https://www.biblegateway.com/passage/?search=Luke+19:1-5&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">1</span>He entered and was passing through Jericho. <span class="v">2</span>There was a man named Zacchaeus. He was a chief tax collector, and he was rich. <span class="v">3</span>He was trying to see who Jesus was, and couldn’t because of the crowd, because he was short. <span class="v">4</span>He ran on ahead, and climbed up into a sycamore tree to see him, for he was going to pass that way. <span class="v">5</span>When Jesus came to the place, he looked up and saw him, and said to him,
+“Zacchaeus, hurry and come down, for today I must stay at your house.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Meeting Jesus Transforms Us</div>
+<div class="ref">Luke 19:6-10<a href="https://www.biblegateway.com/passage/?search=Luke+19:6-10&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">6</span>He hurried, came down, and received him joyfully. <span class="v">7</span>When they saw it, they all murmured, saying, “He has gone in to lodge with a man who is a sinner.” <span class="v">8</span>Zacchaeus stood and said to the Lord, “Behold, Lord, half of my goods I give to the poor. If I have wrongfully exacted anything of anyone, I restore four times as much.” <span class="v">9</span>Jesus said to him,
+“Today, salvation has come to this house, because he also is a son of Abraham. <span class="v">10</span>For the Son of Man came to seek and to save that which was lost.” </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Zacchaeus was a chief tax collector — not a low-level functionary but a supervisor with a district and men under him. He worked for Rome, collecting from his own people and inflating the amounts for his own profit.</p>
+<p>That's why the contempt ran so deep. He wasn't a foreign oppressor; he was one of them, and the betrayal cut accordingly. Jericho was a wealthy customs town, so he was very good at it.</p>
+<p>Then Jesus passes through, and everything Zacchaeus does breaks social convention: a man of his standing running, and climbing a tree in public. Both he and Jesus took real heat for the conversation that followed. Zacchaeus faced the same fork as the rich young ruler a chapter earlier (Luke 18:18-23) — and went the other way.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Luke 19:2-4</div><p>Luke gives us three facts: chief tax collector, rich, and short. The third one is the reason for the tree, and the tree is the reason a dignified man made a spectacle of himself.</p></div>
+<div class="cmt"><div class="ref">Luke 19:5</div><p>"Zacchaeus, hurry and come down." They had never met. Jesus uses his name, and "I must stay at your house today" — that word must runs through Luke for things belonging to God's purpose.</p></div>
+<div class="cmt"><div class="ref">Luke 19:7</div><p>"They all grumbled." Not the Pharisees this time — everyone. Jesus chose the least defensible house in Jericho.</p></div>
+<div class="cmt"><div class="ref">Luke 19:8</div><p>Half his goods to the poor, and fourfold restitution to anyone he defrauded — going past the law's requirement (Exodus 22:1; Numbers 5:7). This isn't payment for salvation; it's what salvation looked like arriving.</p></div>
+<div class="cmt"><div class="ref">Luke 19:9-10</div><p>"He also is a son of Abraham" reinstates a man the crowd had written off. And then Luke's thesis statement for the whole Gospel: the Son of Man came to seek and to save the lost.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>Why does Luke bother telling us his job and status?</summary><div class="ans">Because Jesus calls everyone, and this is the hardest case in town. It also flags the cost — Zacchaeus couldn't keep operating as before, and his reputation would take years to repair. Encountering Jesus changed his heart faster than it changed his standing.</div></details>
+<details class="q"><summary>What keeps us from making an effort to get to Jesus?</summary><div class="ans">Mostly what people will think. Zacchaeus's height blocked his view and he did something undignified about it. We let embarrassment or shame convince us we don't merit His attention — but He sees us and invites us closer.</div></details>
+<details class="q"><summary>What's the significance of Jesus using his name?</summary><div class="ans">He knew him before they met — the whole story, including the parts Zacchaeus wouldn't have volunteered. Jesus steps into people's lives before they've cleaned anything up. He does the same with us.</div></details>
+<details class="q"><summary>How did the crowd view him?</summary><div class="ans">As a sinner, full stop. They couldn't imagine Jesus choosing his house. They also couldn't possibly have known his heart, his doubts, or his fears — and they had already decided.</div></details>
+<details class="q"><summary>Why give the money away so freely?</summary><div class="ans">Because he'd found something worth more. The weight of what he'd taken was heavy, and he wanted to make it right. His possessions lost their grip the moment Jesus was willing to see him as something other than a tax collector.</div></details>
+<details class="q"><summary>What difference has meeting Jesus made for you?</summary><div class="ans">There's no case in Scripture of someone following Jesus and staying the same. Real encounter changes people, and the change shows up where other people can see it.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Passing through Jericho, Jesus calls a wealthy chief tax collector down from a sycamore tree and invites Himself to his house. The crowd objects. Zacchaeus responds by giving half his wealth to the poor and repaying fourfold what he had extorted, and Jesus declares that salvation has come to the house.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>Luke's running concern for the lost, the poor, and the outsider — this story is the capstone before the entry into Jerusalem.</li>
+<li>Repentance with a visible price tag: real change touches the wallet and the relationships.</li>
+<li>Grace preceding reform — Jesus invites Himself in before Zacchaeus promises anything.</li>
+<li>"Son of Abraham" as restored belonging, not ethnic bookkeeping.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Did Zacchaeus buy his salvation?</p><p>The order matters. Jesus calls him, comes to his house, and only then does Zacchaeus announce the restitution — and only then does Jesus say salvation has come. The generosity is evidence, not payment.</p></div>
+<div class="hardq"><p class="t">Is the Greek present tense significant?</p><p>"I give" and "I restore" are present tense, and a minority reading takes them as descriptions of what Zacchaeus already did habitually — making the story a vindication rather than a conversion. Most translators and commentators read them as declarations of new intent, which fits Jesus's "today" in v. 9.</p></div>
+<div class="hardq"><p class="t">Does following Jesus require giving away wealth?</p><p>The rich young ruler was told to sell everything; Zacchaeus volunteers half. Scripture doesn't set a percentage. It does consistently treat money as the thing most likely to compete for the throne.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">ἀρχιτελώνης</span><span class="translit">architelōnēs</span><span class="lang">Greek</span><p>"Chief tax collector" — a term found nowhere else in Greek literature. Luke may have coined it. Zacchaeus supervised other collectors and took a cut of their take.</p></div>
+<div class="word"><span class="term">δεῖ</span><span class="translit">dei</span><span class="lang">Greek</span><p>"I must stay at your house." Luke uses this word of divine necessity — the same must behind Jesus going to Jerusalem and to the cross. This visit is not a detour.</p></div>
+<div class="word"><span class="term">Ζακχαῖος</span><span class="translit">Zakkai</span><span class="lang">Hebrew</span><p>The name means "pure" or "innocent" — an irony the crowd would have felt keenly, and a description that became true that day.</p></div>
+<div class="word"><span class="term">διεγόγγυζον</span><span class="translit">diegongyzon</span><span class="lang">Greek</span><p>"They grumbled" — the same word the Greek Old Testament uses for Israel murmuring in the wilderness. Luke is characterizing the crowd, not just reporting noise.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Luke+15:1-32&version=ESV" target="_blank" rel="noopener">Luke 15:1-32</a></div><div class="n">Lost sheep, lost coin, lost son — the parables that set up "came to seek and to save the lost."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Luke+18:18-23&version=ESV" target="_blank" rel="noopener">Luke 18:18-23</a></div><div class="n">The rich young ruler, one chapter earlier, facing the same choice and walking away.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Exodus+22:1&version=ESV" target="_blank" rel="noopener">Exodus 22:1; Numbers 5:6-7</a></div><div class="n">Restitution law — Zacchaeus goes beyond what was required.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Luke+5:27-32&version=ESV" target="_blank" rel="noopener">Luke 5:27-32</a></div><div class="n">The call of Levi, another tax collector, and "I have not come to call the righteous."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Ezekiel+34:11-16&version=ESV" target="_blank" rel="noopener">Ezekiel 34:11-16</a></div><div class="n">God Himself seeking out His scattered sheep.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=2+Corinthians+5:17&version=ESV" target="_blank" rel="noopener">2 Corinthians 5:17</a></div><div class="n">New creation — the old has passed away.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="09-now-i-can-see.html"><span class="dir">Previous</span>Now I Can See</a>
+<a class="nx" href="11-stones-would-cry-out.html"><span class="dir">Next</span>The Stones Would Cry Out</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

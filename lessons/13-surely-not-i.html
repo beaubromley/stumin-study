@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surely Not I? &middot; StuMin Study</title>
+<meta name="description" content="Jesus endured betrayal for our salvation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 27 &middot; Session 5</p>
+<h1>Surely Not I?</h1>
+<div class="mainpoint">Jesus endured betrayal for our salvation.</div>
+<p class="meta">2026-11-01 &middot; Matthew 26; Mark 14; Luke 22; John 13 &middot; <a href="https://drive.google.com/file/d/1EPnYbKPXDRKMYDXjxnsgcJVpmvKeLNh-/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Endured Betrayal</div>
+<div class="ref">Mark 14:17-21<a href="https://www.biblegateway.com/passage/?search=Mark+14:17-21&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">17</span>When it was evening he came with the twelve. <span class="v">18</span>As they sat and were eating, Jesus said,
+“Most certainly I tell you, one of you will betray me—he who eats with me.” <span class="v">19</span>They began to be sorrowful, and to ask him one by one, “Surely not I?” And another said, “Surely not I?” <span class="v">20</span>He answered them,
+“It is one of the twelve, he who dips with me in the dish. <span class="v">21</span>For the Son of Man goes, even as it is written about him, but woe to that man by whom the Son of Man is betrayed! It would be better for that man if he had not been born.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Jesus Knew the Cost</div>
+<div class="ref">Mark 14:22-31<a href="https://www.biblegateway.com/passage/?search=Mark+14:22-31&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">22</span>As they were eating, Jesus took bread, and when he had blessed, he broke it, and gave to them, and said,
+“Take, eat. This is my body.” <span class="v">23</span>He took the cup, and when he had given thanks, he gave to them. They all drank of it. <span class="v">24</span>He said to them,
+“This is my blood of the new covenant, which is poured out for many. <span class="v">25</span>Most certainly I tell you, I will no more drink of the fruit of the vine, until that day when I drink it anew in God’s Kingdom.” <span class="v">26</span>When they had sung a hymn, they went out to the Mount of Olives. <span class="v">27</span>Jesus said to them,
+“All of you will be made to stumble because of me tonight, for it is written, ‘I will strike the shepherd, and the sheep will be scattered.’ <span class="v">28</span>However, after I am raised up, I will go before you into Galilee.” <span class="v">29</span>But Peter said to him, “Although all will be offended, yet I will not.” <span class="v">30</span>Jesus said to him,
+“Most certainly I tell you, that you today, even this night, before the rooster crows twice, you will deny me three times.” <span class="v">31</span>But he spoke all the more, “If I must die with you, I will not deny you.” They all said the same thing. </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>All four Gospels include this scene, and it is a hard one. The disciples had no idea what they were walking into at this meal. When Jesus said one of them would betray Him, each man turned the question on himself.</p>
+<p>That reaction is worth noticing. In the other accounts Judas sits silently while the rest interrogate their own hearts — which says something about how attached to Jesus they genuinely were, and how sensitive to the mere suggestion.</p>
+<p>Peter is Peter: emphatic, loving Jesus so intensely that he cannot imagine the failure Jesus has just described. He isn't lying. He simply doesn't know himself yet. Within hours every one of them would scatter.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Mark 14:18-20</div><p>"One who is eating with me." Sharing a meal in that culture was a bond of loyalty, which is what makes the betrayal a desecration rather than merely a crime. Psalm 41:9 stands behind the phrasing.</p></div>
+<div class="cmt"><div class="ref">Mark 14:21</div><p>Two truths in one sentence: the Son of Man goes as it is written, and woe to the man who betrays Him. Divine purpose and human responsibility, held together without resolution.</p></div>
+<div class="cmt"><div class="ref">Mark 14:22-24</div><p>"This is my body... my blood of the covenant, poured out for many." He reframes the Passover around Himself and invokes Exodus 24:8 and Jeremiah 31:31. The meal that remembered rescue from Egypt now points to a greater one.</p></div>
+<div class="cmt"><div class="ref">Mark 14:25</div><p>"I will not drink again... until that day when I drink it new in the kingdom of God." Even at the table before His death, He is looking past it to a feast.</p></div>
+<div class="cmt"><div class="ref">Mark 14:27-31</div><p>Jesus quotes Zechariah 13:7 — strike the shepherd, the sheep scatter — and then, before anyone can absorb it: "But after I am raised up, I will go before you to Galilee." The restoration is promised before the failure happens. Peter talks over it.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>How could Jesus bring up His betrayal so calmly?</summary><div class="ans">He knew exactly what was happening and trusted the Father through it. He came for this moment. If we knew what Judas was about to do, most of us would have retaliated somehow. Jesus placed His trust in the Father rather than in anyone in that room.</div></details>
+<details class="q"><summary>How did the disciples respond?</summary><div class="ans">By searching themselves — "Is it I?" You can feel the tension. They combed back through their own conversations wondering if they'd done something. They loved Him and couldn't picture betraying Him. One of them had, and soon all of them would, in their own way.</div></details>
+<details class="q"><summary>Read John 13:1-5. If Jesus knew Judas would betray Him, why keep him close and let him serve?</summary><div class="ans">It runs into God's sovereignty — He sees what we can't and is intentional about His glory. Jesus taught Judas faithfully, used his gifts, and was a friend to him. He also wasn't immune to the sting; being God in flesh didn't make Him numb. And He washed Judas's feet along with everyone else's. That's the example we're handed.</div></details>
+<details class="q"><summary>What did Jesus mean about eating His body and drinking His blood?</summary><div class="ans">Deeply symbolic instruction, first for them and now for us. Breaking bread and pouring a cup point to His sacrifice. The bread reaches back to manna in the wilderness (Deuteronomy 8:3); Jesus was born in Bethlehem, "house of bread," and called Himself the bread of life. The cup points to the blood of countless sacrifices and to the final one. Paul says we proclaim the Lord's death until He comes (1 Corinthians 11:23-26).</div></details>
+<details class="q"><summary>Why was Jesus committed to sacrificing Himself?</summary><div class="ans">Old Testament prophecy pointed here, and He quotes Zechariah 13:7 about the struck shepherd. He obeyed the Father because He saw the whole picture — He was born to save us from sin, which is what His name means (Matthew 1:21). He did the Father's will whatever it cost, out of love for the Father and for us.</div></details>
+<details class="q"><summary>How can our lives deny that we know Jesus? What do we do when we fall?</summary><div class="ans">This one's uncomfortable. His closest friends denied Him and ran. We're capable of the same — denying Him by what we say, by staying silent, by not loving people. Living like we know Him is a daily, active choice. And when we fall, we don't stay down: repent, get back in the Word, and ask people to hold us accountable.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>At the Passover meal, Jesus announces that one of the twelve will betray Him. He then institutes the Lord's Supper, reinterpreting the bread and cup around His own body and blood as the blood of the covenant. He predicts that all of them will fall away, promises to meet them in Galilee after He is raised, and tells Peter he will deny Him three times before the rooster crows twice.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>The new covenant of Jeremiah 31 inaugurated at a table, sealed at a cross.</li>
+<li>Passover fulfilled: the lamb, the blood, the deliverance — all pointing here.</li>
+<li>Divine sovereignty and human guilt affirmed together, neither one cancelling the other.</li>
+<li>Grace preceding failure — the promise of restoration is spoken before the denial happens.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">"This is my body"</p><p>The meaning of these words has divided the church for centuries — transubstantiation, consubstantiation, spiritual presence, memorial. Jesus was physically present holding the bread when He said it, which every reading has to account for. All the major traditions agree the Supper genuinely joins believers to Christ's sacrifice; they disagree about how.</p></div>
+<div class="hardq"><p class="t">Was Judas free?</p><p>"The Son of Man goes as it is written" and "woe to that man." Scripture asserts both the fixed plan and Judas's real guilt without explaining the mechanism. The "better if he had not been born" line is among the gravest in the Gospels, and attempts to soften it generally strain the text.</p></div>
+<div class="hardq"><p class="t">"Poured out for many"</p><p>Many rather than all. Some read this as defining the atonement's scope; others note that "many" echoes Isaiah 53:11-12 and functions as a Semitic way of saying a great multitude, not a limit. The phrase carries more weight in theological debate than the passage itself assigns it.</p></div>
+<div class="hardq"><p class="t">Peter's sincerity</p><p>He wasn't posturing. He meant every word and still failed within hours. Confidence in our own resolve is not the same as strength — a genuinely uncomfortable takeaway.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">διαθήκη</span><span class="translit">diathēkē</span><span class="lang">Greek</span><p>"Covenant" — a binding arrangement God establishes, not a negotiated contract between equals. Jesus's phrase echoes Exodus 24:8, where Moses sprinkles the blood of the covenant on the people.</p></div>
+<div class="word"><span class="term">εὐχαριστήσας</span><span class="translit">eucharistēsas</span><span class="lang">Greek</span><p>"When he had given thanks." The source of the word Eucharist. Thanksgiving at the table on the night He was betrayed.</p></div>
+<div class="word"><span class="term">σκανδαλισθήσεσθε</span><span class="translit">skandalisthēsesthe</span><span class="lang">Greek</span><p>"You will all fall away" — from skandalon, the trigger of a trap. Not drifting but stumbling over an obstacle, which is what the cross became for them.</p></div>
+<div class="word"><span class="term">ὑπὲρ πολλῶν</span><span class="translit">hyper pollōn</span><span class="lang">Greek</span><p>"For many" — the same phrase as Isaiah 53:11-12, where the suffering servant bears the sin of many. Mark is pointing the reader to that chapter.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+41:9&version=ESV" target="_blank" rel="noopener">Psalm 41:9</a></div><div class="n">"My close friend who ate my bread has lifted his heel against me."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Exodus+12:1-14&version=ESV" target="_blank" rel="noopener">Exodus 12:1-14; 24:8</a></div><div class="n">The Passover lamb and the blood of the covenant — both invoked at this table.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Jeremiah+31:31-34&version=ESV" target="_blank" rel="noopener">Jeremiah 31:31-34</a></div><div class="n">The new covenant promised, with the law written on hearts.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Isaiah+53:11-12&version=ESV" target="_blank" rel="noopener">Isaiah 53:11-12</a></div><div class="n">The servant who bears the sin of many.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Zechariah+13:7&version=ESV" target="_blank" rel="noopener">Zechariah 13:7</a></div><div class="n">"Strike the shepherd, and the sheep will be scattered" — quoted by Jesus in v. 27.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=1+Corinthians+11:23-26&version=ESV" target="_blank" rel="noopener">1 Corinthians 11:23-26</a></div><div class="n">Paul's instructions for the Lord's Supper, proclaiming His death until He comes.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=John+21:15-19&version=ESV" target="_blank" rel="noopener">John 21:15-19</a></div><div class="n">Peter restored by the same Jesus who predicted his denial.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="12-the-time-is-coming.html"><span class="dir">Previous</span>The Time is Coming</a>
+<span></span>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

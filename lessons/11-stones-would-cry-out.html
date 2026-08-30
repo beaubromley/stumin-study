@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stones Would Cry Out &middot; StuMin Study</title>
+<meta name="description" content="Jesus, our true King, deserves all of our praise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 27 &middot; Session 3</p>
+<h1>The Stones Would Cry Out</h1>
+<div class="mainpoint">Jesus, our true King, deserves all of our praise.</div>
+<p class="meta">2026-10-18 &middot; Matthew 21; Mark 11; Luke 19; John 12 &middot; <a href="https://drive.google.com/file/d/11_BLfNxo-szUGAP5hX4okBbgmuyInk9O/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Is Worthy of Worship</div>
+<div class="ref">Luke 19:28-40<a href="https://www.biblegateway.com/passage/?search=Luke+19:28-40&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">28</span>Having said these things, he went on ahead, going up to Jerusalem. <span class="v">29</span>When he came near to Bethsphage and Bethany, at the mountain that is called Olivet, he sent two of his disciples, <span class="v">30</span>saying,
+“Go your way into the village on the other side, in which, as you enter, you will find a colt tied, which no man had ever sat upon. Untie it, and bring it. <span class="v">31</span>If anyone asks you, ‘Why are you untying it?’ say to him: ‘The Lord needs it.’” <span class="v">32</span>Those who were sent went away, and found things just as he had told them. <span class="v">33</span>As they were untying the colt, its owners said to them, “Why are you untying the colt?” <span class="v">34</span>They said, “The Lord needs it.” <span class="v">35</span>They brought it to Jesus. They threw their cloaks on the colt, and set Jesus on them. <span class="v">36</span>As he went, they spread their cloaks on the road. <span class="v">37</span>As he was now getting near, at the descent of the Mount of Olives, the whole multitude of the disciples began to rejoice and praise God with a loud voice for all the mighty works which they had seen, <span class="v">38</span>saying, “Blessed is the King who comes in the name of the Lord!
+ Peace in heaven, and glory in the highest!” <span class="v">39</span>Some of the Pharisees from the multitude said to him, “Teacher, rebuke your disciples!” <span class="v">40</span>He answered them,
+“I tell you that if these were silent, the stones would cry out.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Jesus Longs for Us to Know Him</div>
+<div class="ref">Luke 19:41-44<a href="https://www.biblegateway.com/passage/?search=Luke+19:41-44&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">41</span>When he came near, he saw the city and wept over it, <span class="v">42</span>saying,
+“If you, even you, had known today the things which belong to your peace! But now, they are hidden from your eyes. <span class="v">43</span>For the days will come on you, when your enemies will throw up a barricade against you, surround you, hem you in on every side, <span class="v">44</span>and will dash you and your children within you to the ground. They will not leave in you one stone on another, because you didn’t know the time of your visitation.” </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>This begins the last week of Jesus's earthly life. Everything from here moves toward the cross, and every detail is chosen.</p>
+<p>Riding a colt was a deliberate statement. A general or conquering ruler entered a city on a horse; a king coming in peace rode a donkey. Jesus asks for a colt "on which no one has ever yet sat" — an animal set apart, the seat of authority reserved for Him alone. He could have staged something grander. The King of kings arrives at eye level with the people He came for.</p>
+<p>The crowd is genuinely joyful. Within days many of them will be calling for His execution. Jesus knows this as He rides, and He weeps over the city before He reaches it.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Luke 19:30-34</div><p>"The Lord has need of it" is enough. Whether by prior arrangement or foreknowledge, Luke presents Jesus in full command of the week that appears to be happening to Him.</p></div>
+<div class="cmt"><div class="ref">Luke 19:37-38</div><p>The disciples praise God "for all the mighty works that they had seen" — this is not abstract worship but a response to specific things. Their shout quotes Psalm 118:26, the pilgrim psalm sung on the way up to Jerusalem.</p></div>
+<div class="cmt"><div class="ref">Luke 19:39-40</div><p>The Pharisees want the crowd silenced. "If these were silent, the very stones would cry out." Creation will not stay quiet about its Creator; the only question is whether people join in.</p></div>
+<div class="cmt"><div class="ref">Luke 19:41-42</div><p>He weeps over the city at the height of the celebration. "Would that you had known the things that make for peace" — the King is grieving on His own parade route.</p></div>
+<div class="cmt"><div class="ref">Luke 19:43-44</div><p>A specific prophecy of siege and destruction, fulfilled in AD 70. The reason given is not military or political: "you did not know the time of your visitation." God came, and they missed Him.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>What is worship, and why does it matter?</summary><div class="ans">Reverence and devotion directed at what we consider highest. Whether we worship isn't in question — we're built for it. The question is whether God alone receives it. Social media, money, possessions, and people take that place easily. Worship is where your attention and affection actually aim, not a playlist.</div></details>
+<details class="q"><summary>What made Jesus worthy of their praise? Of ours?</summary><div class="ans">He was sinless, healed, taught, freed, comforted, and rebuked. But strip all of that away and He is still worthy, because of who He is — King of kings, Son of God. The works are evidence, not the basis.</div></details>
+<details class="q"><summary>What did Jesus mean about the stones crying out?</summary><div class="ans">God will receive the glory He's owed. If people withhold it, creation supplies it — trees, mountains, sunsets all point back to their Maker. We are the only part of creation capable of refusing, and the Pharisees' refusal changed nothing about the truth.</div></details>
+<details class="q"><summary>What do we learn from Jesus weeping over Jerusalem?</summary><div class="ans">He wasn't angry or disappointed — He was heartbroken. He saw the destruction coming and the separation between these people and the Father. He didn't want to cast unbelievers out; He wanted to draw them in. His heart aches, and it aches for us.</div></details>
+<details class="q"><summary>Why couldn't the Pharisees see who He was?</summary><div class="ans">They were looking for a different king — throne, power, force. Jesus came in humility, born in poverty, pushing back on their religious system and calling them out. He didn't match the picture they had built, so they discarded the reality instead of the picture.</div></details>
+<details class="q"><summary>What does it take for people to see Jesus?</summary><div class="ans">The Spirit revealing Him; we don't get there by analysis. Often it takes reaching the end of ourselves — the exhaustion of trying to be good enough, or walking through something that breaks our self-sufficiency. Seeing our need for Him is itself a gift.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Jesus enters Jerusalem on a colt to the shouts of His disciples, who quote Psalm 118. Challenged by Pharisees to silence them, He says the stones would cry out instead. Then, drawing near the city, He weeps and foretells its destruction because it did not recognize the time of God's visitation.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>Kingship redefined — the triumphal entry is a coronation that leads to a cross.</li>
+<li>Prophecy fulfilled deliberately and publicly (Zechariah 9:9), so the claim is unmistakable.</li>
+<li>Creation's testimony to God, a theme from Psalm 19 through Romans 1.</li>
+<li>Judgment and grief held together: the same Jesus who pronounces destruction weeps while doing it.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">The crowd that cheered and then called for crucifixion</p><p>Often stated as a single fickle mob. Luke has the disciples doing the praising here, and the Gospels describe a hostile crowd assembled by the chief priests days later — likely overlapping but not identical groups. The larger point stands: public enthusiasm is not the same as allegiance.</p></div>
+<div class="hardq"><p class="t">Did Jesus predict AD 70?</p><p>The description of siege works and total destruction matches what Rome did to Jerusalem in AD 70 with striking accuracy. Skeptical scholars have argued the passage was written afterward for that reason; the language also draws on standard Old Testament siege imagery, which weakens the argument.</p></div>
+<div class="hardq"><p class="t">Judgment on a city</p><p>Verses 43-44 are severe, including children. This is prophetic announcement of consequence rather than divine relish, and it is delivered through tears. Reading the tears out of the passage distorts it.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">ὡσαννά / εὐλογημένος</span><span class="translit">hosanna / eulogēmenos</span><span class="lang">Greek/Hebrew</span><p>Hosanna is Hebrew for "save now!" — a plea that had become an acclamation. Luke records "Blessed is the King," quoting Psalm 118:26, the psalm pilgrims sang approaching the temple.</p></div>
+<div class="word"><span class="term">ἐπισκοπή</span><span class="translit">episkopē</span><span class="lang">Greek</span><p>"The time of your visitation" — God's coming to inspect and to act. The same root gives us "overseer." It can mean visitation for blessing or for judgment; here, tragically, both.</p></div>
+<div class="word"><span class="term">ἔκλαυσεν</span><span class="translit">eklausen</span><span class="lang">Greek</span><p>"He wept over it" — this is the loud, wailing word, not the quiet tears of John 11:35. Jesus is openly grieving in front of a celebrating crowd.</p></div>
+<div class="word"><span class="term">εἰρήνη</span><span class="translit">eirēnē</span><span class="lang">Greek</span><p>"The things that make for peace." Behind it stands shalom — wholeness and right relationship with God, not a truce with Rome, which is what the crowd wanted.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Zechariah+9:9&version=ESV" target="_blank" rel="noopener">Zechariah 9:9</a></div><div class="n">The king coming humble and mounted on a colt — the prophecy Jesus enacts.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+118:22-26&version=ESV" target="_blank" rel="noopener">Psalm 118:22-26</a></div><div class="n">The pilgrim psalm the crowd quotes, including the rejected stone.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+19:1-4&version=ESV" target="_blank" rel="noopener">Psalm 19:1-4</a></div><div class="n">The heavens declaring God's glory — the stones' testimony.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Romans+1:19-20&version=ESV" target="_blank" rel="noopener">Romans 1:19-20</a></div><div class="n">Creation making God's nature plain, leaving people without excuse.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Luke+13:34-35&version=ESV" target="_blank" rel="noopener">Luke 13:34-35</a></div><div class="n">Jesus's earlier lament over Jerusalem, the same grief in advance.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Habakkuk+2:11&version=ESV" target="_blank" rel="noopener">Habakkuk 2:11</a></div><div class="n">The stone crying out from the wall — the likely background to v. 40.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="10-seek-and-save-the-lost.html"><span class="dir">Previous</span>To Seek and Save the Lost</a>
+<a class="nx" href="12-the-time-is-coming.html"><span class="dir">Next</span>The Time is Coming</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

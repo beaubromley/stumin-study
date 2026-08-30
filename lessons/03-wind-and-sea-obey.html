@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Wind and the Sea Obey &middot; StuMin Study</title>
+<meta name="description" content="Jesus is worthy of our trust.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.05rem/1.8 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  letter-spacing:0;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+.pager{
+  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+  font:500 .85rem/1.4 "Inter",sans-serif;
+}
+.pager a{text-decoration:none;max-width:45%}
+.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 25 &middot; Session 3</p>
+<h1>The Wind and the Sea Obey</h1>
+<div class="mainpoint">Jesus is worthy of our trust.</div>
+<p class="meta">2026-08-30 &middot; Matthew 8; Mark 4; Luke8 &middot; <a href="https://drive.google.com/file/d/17KhMj6__aXNz5xISXnqLTezAytHm1DP0/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Storms Are Not God's Absence</div>
+<div class="ref">Mark 4:35-38<a href="https://www.biblegateway.com/passage/?search=Mark+4:35-38&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">35</span>On that day, when evening had come, he said to them,
+“Let’s go over to the other side.” <span class="v">36</span>Leaving the multitude, they took him with them, even as he was, in the boat. Other small boats were also with him. <span class="v">37</span>A big wind storm arose, and the waves beat into the boat, so much that the boat was already filled. <span class="v">38</span>He himself was in the stern, asleep on the cushion, and they woke him up, and told him, “Teacher, don’t you care that we are dying?” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Storms Reveal God's Authority</div>
+<div class="ref">Mark 4:39-41<a href="https://www.biblegateway.com/passage/?search=Mark+4:39-41&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">39</span>He awoke, and rebuked the wind, and said to the sea,
+“Peace! Be still!” The wind ceased, and there was a great calm. <span class="v">40</span>He said to them,
+“Why are you so afraid? How is it that you have no faith?” <span class="v">41</span>They were greatly afraid, and said to one another, “Who then is this, that even the wind and the sea obey him?” </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+<section id="context"><p class="shead">Context</p>
+<p>Mark is building a case. Chapter by chapter he stacks up demonstrations of Jesus's authority — over sickness, over demons, over nature, and finally over death — so that the reader arrives at the disciples' question with real force behind it.</p>
+<p>The Sea of Galilee sits about 700 feet below sea level, ringed by hills. Cold air off the heights collides with warm air over the water and produces violent squalls with almost no warning. Several men in that boat fished this lake for a living, and they were certain they were about to die.</p>
+<p>Early tradition holds that Mark drew his material from Peter, who was in the boat. The rawness of the disciples' accusation — "don't you care?" — reads like someone's actual memory rather than a tidied-up account.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Mark 4:35</div><p>Crossing at evening was Jesus's idea. Whatever the storm was, it was not an interruption of the plan.</p></div>
+<div class="cmt"><div class="ref">Mark 4:38</div><p>Asleep on the cushion in the stern. Mark records Jesus's exhaustion without embarrassment — He is fully human, and the humanity is not a costume.</p></div>
+<div class="cmt"><div class="ref">Mark 4:39</div><p>"He rebuked the wind" uses the same verb Mark uses for casting out demons, and "Peace! Be still!" is literally "be muzzled." Jesus addresses the storm the way He addresses an unclean spirit. In the Old Testament, only God rules the raging sea.</p></div>
+<div class="cmt"><div class="ref">Mark 4:41</div><p>They were more afraid after the calm than during the storm. Terror of the wind is ordinary; terror of the One who silences it is the beginning of understanding who is in the boat.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>What were the disciples actually afraid of — and what did they forget?</summary><div class="ans">They feared drowning, but the accusation underneath is "you don't care." They knew Jesus; they had not grasped His identity or His authority. Fear told them His sleep meant indifference.</div></details>
+<details class="q"><summary>Was the storm a surprise to Jesus? Then why sleep through it?</summary><div class="ans">No. He proposed the crossing. He slept because He was genuinely tired — fully man — and because He was in no danger — fully God. Both are true at once, and that combination is the comfort: He understands it and He commands it.</div></details>
+<details class="q"><summary>Why does the manner of the calming matter?</summary><div class="ans">A word. No ritual, no appeal to God for help. In the Psalms it is the LORD who stills the sea, so Mark's readers are meant to draw the obvious conclusion — and the disciples nearly do.</div></details>
+<details class="q"><summary>When have you struggled to sense God's presence in a storm?</summary><div class="ans">Worth saying out loud. The hospital room, the divorce, the loss, the stretch of loneliness. He isn't unaware of it. Romans 8:28 doesn't promise the storm is good; it promises He is working in it.</div></details>
+<details class="q"><summary>Why is trusting God hard mid-storm, and can storms help rather than hurt our view of Him?</summary><div class="ans">Because you can't see the way out. Jesus can calm every storm and often doesn't — He reveals more of Himself inside the wind than He would have in the calm. Storms tend to correct our sense of how much we need Him.</div></details>
+<details class="q"><summary>Why were they terrified after He calmed it?</summary><div class="ans">Because the category they had for Jesus just broke. That moment is part of why these men later risked their lives carrying the gospel — they had seen it themselves.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Crossing the Sea of Galilee at Jesus's initiative, the disciples are caught in a squall violent enough to swamp the boat while Jesus sleeps. They wake Him with an accusation; He silences the storm with a word and asks about their faith. Their response is not relief but awe: who is this?</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>God's mastery of the chaotic sea, a thread running from Genesis 1 through the Psalms to Revelation 21:1, where there is no more sea.</li>
+<li>The identity question that drives Mark's Gospel — answered by a centurion at the cross in 15:39.</li>
+<li>Fear and faith as alternatives, not opposites of comfort. Jesus doesn't rebuke them for being in a storm.</li>
+<li>The incarnation held together: the sleeping man and the commanding Lord are the same person in the same scene.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">Why doesn't Jesus calm every storm?</p><p>This passage proves He can, which makes the times He doesn't harder, not easier. Scripture doesn't give a formula. It gives Paul's thorn (2 Corinthians 12:7-10), Job's whirlwind, and the promise of presence rather than exemption.</p></div>
+<div class="hardq"><p class="t">Was Jesus's rebuke of the disciples harsh?</p><p>"Have you still no faith?" stings. Read in Mark's flow, it's diagnostic rather than punitive — He is naming the gap between what they had already seen and how they responded, and He calms the storm before He asks.</p></div>
+<div class="hardq"><p class="t">Did Jesus have limited knowledge?</p><p>If He is fully God, did He know the storm was coming? Mark 13:32 says the Son does not know the day or hour, which has occupied theologians for centuries. The historic answer runs through the incarnation — genuine human limitation taken on without loss of deity.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">ἐπετίμησεν</span><span class="translit">epetimēsen</span><span class="lang">Greek</span><p>"He rebuked." Mark uses this same verb for Jesus silencing demons (1:25). Treating the storm as something to be rebuked is a deliberate echo.</p></div>
+<div class="word"><span class="term">πεφίμωσο</span><span class="translit">pephimōso</span><span class="lang">Greek</span><p>"Be still" — literally "be muzzled," a perfect passive imperative. The force is closer to "be gagged and stay that way."</p></div>
+<div class="word"><span class="term">λαῖλαψ</span><span class="translit">lailaps</span><span class="lang">Greek</span><p>A whirlwind or squall, not steady weather. The same word appears in the Greek Old Testament for the whirlwind of God's judgment.</p></div>
+<div class="word"><span class="term">δειλοί</span><span class="translit">deiloi</span><span class="lang">Greek</span><p>"Why are you so afraid?" — deilos is cowardice, a fear that fails rather than fear as an emotion. It's the opposite of the reverent "great fear" they feel in v. 41 (phobos).</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+107:23-30&version=ESV" target="_blank" rel="noopener">Psalm 107:23-30</a></div><div class="n">Sailors in a storm cry to the LORD, who stills the waves — the template this scene is written over.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+89:8-9&version=ESV" target="_blank" rel="noopener">Psalm 89:8-9</a></div><div class="n">"You rule the raging of the sea." The claim being enacted.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Job+38:8-11&version=ESV" target="_blank" rel="noopener">Job 38:8-11</a></div><div class="n">God setting boundaries for the sea; the authority Jesus exercises with a sentence.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Jonah+1:4-16&version=ESV" target="_blank" rel="noopener">Jonah 1:4-16</a></div><div class="n">The other storm story with a sleeping man aboard — and a deliberate contrast in how it resolves.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Matthew+8:23-27&version=ESV" target="_blank" rel="noopener">Matthew 8:23-27; Luke 8:22-25</a></div><div class="n">The parallel accounts.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Mark+15:39&version=ESV" target="_blank" rel="noopener">Mark 15:39</a></div><div class="n">Where Mark's identity question finally gets its answer.</div>
+</div></div></details></section>
+<div class="pager">
+<a href="02-kingdom-of-heaven.html"><span class="dir">Previous</span>The Kingdom of Heaven</a>
+<a class="nx" href="04-your-faith-has-saved-you.html"><span class="dir">Next</span>Your Faith Has Saved You</a>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>
