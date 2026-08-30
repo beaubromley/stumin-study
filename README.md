@@ -7,10 +7,12 @@ each session that has a lesson guide.
 
 ## What's here
 
-- **`index.html`** — every session across all six years in the workbook (2021-22 through
-  2026-27), grouped by volume and unit, with date, main point, and passage. Sessions with
-  linked Google Drive lesson guides link out; the 13 with full study notes link to their
-  own page.
+- **`index.html`** — the current year (2026-27), starting Fall 2026. Every session grouped
+  by volume and unit, with date, main point, and passage. The 13 with full study notes link
+  to their own page.
+- **`archive.html`** — the five previous rotations (2021-22 through 2025-26), 267 sessions,
+  264 of which still link to their original Google Drive lesson guide. Reference only; no
+  study notes are written for these.
 - **`lessons/*.html`** — one page per studied session, with five sections:
   1. **Scripture** — the session's focal passages in full (World English Bible, public
      domain), plus one-click links to read the same passage in ESV on BibleGateway.
@@ -24,6 +26,9 @@ each session that has a lesson guide.
 Currently 13 sessions have full notes: **Aug 16 – Nov 1, 2026**. Those are the weeks the
 spreadsheet has Drive links for. Later sessions are listed on the index with their passage
 and main point, ready to fill in when the guides are published.
+
+`CURRENT_YEAR` at the top of `scripts/build.py` decides which worksheet is the index and
+which fall through to the archive. Bump it when the rotation rolls over.
 
 ## Regenerating the site
 
@@ -39,7 +44,7 @@ Everything the build needs is committed in `data/`, so no network access is requ
 | --- | --- | --- |
 | `scripts/parse_xlsx.py` | Reads the master `.xlsx` and writes `data/curriculum.json` (schedule + Drive links) | When the spreadsheet changes |
 | `scripts/fetch_scripture.py` | Fetches WEB text from bible-api.com into `data/scripture.json` | When a lesson's passages change |
-| `scripts/build.py` | Renders `index.html` and `lessons/*.html` | After any data change |
+| `scripts/build.py` | Renders `index.html`, `archive.html`, and `lessons/*.html` | After any data change |
 
 `scripts/parse_xlsx.py` takes the workbook path as its first argument and defaults to
 `~/Downloads/StuMin MASTER Scope and Sequence.xlsx`.

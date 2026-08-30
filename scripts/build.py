@@ -390,87 +390,131 @@ def render_lesson(slug, lesson, scripture, session, prev_link, next_link):
     )
 
 
+def render_year_blocks(year, studied):
+    """Render one worksheet's volumes, units, and sessions as list markup."""
+    body = []
+    open_list = False
+    for b in year["blocks"]:
+        if b["kind"] == "volume":
+            if open_list:
+                body.append("</ol>")
+                open_list = False
+            body.append(f'<div class="volume"><h2>{esc(b["title"])}</h2></div>')
+        elif b["kind"] == "key_passage":
+            body.append(f'<div class="keyverse">{esc(b["text"])}</div>')
+        elif b["kind"] == "unit":
+            if open_list:
+                body.append("</ol>")
+            body.append(
+                f'<p class="unit">Unit {esc(b.get("number") or "")} &mdash; {esc(b.get("title") or "")}</p>'
+            )
+            body.append('<ol class="sessions">')
+            open_list = True
+        elif b["kind"] == "break":
+            if not open_list:
+                body.append('<ol class="sessions">')
+                open_list = True
+            body.append(
+                f'<li class="brk">{esc(b.get("date") or "")} &mdash; {esc(b.get("label") or "")}</li>'
+            )
+        elif b["kind"] == "session":
+            if not open_list:
+                body.append('<ol class="sessions">')
+                open_list = True
+            slug = studied.get(b.get("drive_id"))
+            when = b.get("date") or ""
+            when_html = (
+                f'<span class="no">{esc(when)}</span>'
+                if when and not re.match(r"^\d{4}-", when)
+                else esc(when) or "&mdash;"
+            )
+            if slug:
+                t = f'<a href="lessons/{slug}.html">{esc(b["title"])}</a><span class="tag study">Study</span>'
+            elif b.get("pdf_url"):
+                t = f'<a href="{b["pdf_url"]}" target="_blank" rel="noopener">{esc(b["title"])}</a><span class="tag">PDF</span>'
+            else:
+                t = esc(b["title"])
+            body.append(
+                f'<li class="session"><div class="when">{when_html}</div><div>'
+                f'<div class="stitle">{t}</div>'
+                + (f'<p class="point">{esc(b["main_point"])}</p>' if b.get("main_point") else "")
+                + (f'<p class="passage">{esc(b["passage"])}</p>' if b.get("passage") else "")
+                + "</div></li>"
+            )
+    if open_list:
+        body.append("</ol>")
+    return body
+
+
 def render_index(curriculum, studied):
-    years = curriculum["years"]
+    """The current year only. Earlier years live on archive.html."""
+    year = next(y for y in curriculum["years"] if y["year"] == CURRENT_YEAR)
+    older = [y for y in curriculum["years"] if y["year"] != CURRENT_YEAR]
+
     body = [
         '<header class="site"><div class="wrap">',
         '<p class="kicker">Student Ministry</p>',
         "<h1>Scope &amp; Sequence</h1>",
-        '<p class="sub">Every session in the rotation, with full study notes for the weeks we have lesson guides for.</p>',
+        f'<p class="sub">{esc(CURRENT_YEAR)} &mdash; every session from Fall 2026 on, with full '
+        "study notes for the weeks we have lesson guides for.</p>",
         '<div class="yearnav">',
+        f'<a class="on" href="index.html">{esc(CURRENT_YEAR)}</a>',
+        '<a href="archive.html">Past years &rarr;</a>',
+        "</div></div></header>",
+        '<main class="wrap">',
+        f'<div class="note"><strong>{len(studied)} sessions</strong> have the full four-section '
+        "study (scripture, context, commentary, questions) plus a deeper-study block. Those are "
+        "the weeks with linked lesson guides &mdash; Aug 16 through Nov 1, 2026. Everything after "
+        "that is listed here with its passage and main point, ready to fill in when the guides "
+        f"land. Earlier years ({esc(older[-1]['year'])} through {esc(older[0]['year'])}) are in "
+        'the <a href="archive.html">archive</a>.</div>',
     ]
-    for y in years:
-        on = " class=\"on\"" if y["year"] == CURRENT_YEAR else ""
-        body.append(f'<a href="#y{y["year"]}"{on}>{y["year"]}</a>')
-    body.append("</div></div></header>")
-    body.append('<main class="wrap">')
-
-    n_study = len(studied)
-    body.append(
-        f'<div class="note"><strong>{n_study} sessions</strong> have the full four-section study '
-        "(scripture, context, commentary, questions) plus a deeper-study block. Those are the weeks "
-        "with linked lesson guides &mdash; Aug 16 through Nov 1, 2026. Everything after that is listed "
-        "here with its passage and main point, ready to fill in when the guides land.</div>"
-    )
-
-    for y in years:
-        body.append(f'<h2 id="y{y["year"]}" class="unit" style="margin-top:3rem">{y["year"]}</h2>')
-        open_list = False
-        for b in y["blocks"]:
-            if b["kind"] == "volume":
-                if open_list:
-                    body.append("</ol>")
-                    open_list = False
-                body.append(f'<div class="volume"><h2>{esc(b["title"])}</h2></div>')
-            elif b["kind"] == "key_passage":
-                body.append(f'<div class="keyverse">{esc(b["text"])}</div>')
-            elif b["kind"] == "unit":
-                if open_list:
-                    body.append("</ol>")
-                body.append(
-                    f'<p class="unit">Unit {esc(b.get("number") or "")} &mdash; {esc(b.get("title") or "")}</p>'
-                )
-                body.append('<ol class="sessions">')
-                open_list = True
-            elif b["kind"] == "break":
-                if not open_list:
-                    body.append('<ol class="sessions">')
-                    open_list = True
-                body.append(
-                    f'<li class="brk">{esc(b.get("date") or "")} &mdash; {esc(b.get("label") or "")}</li>'
-                )
-            elif b["kind"] == "session":
-                if not open_list:
-                    body.append('<ol class="sessions">')
-                    open_list = True
-                slug = studied.get(b.get("drive_id"))
-                when = b.get("date") or ""
-                when_html = (
-                    f'<span class="no">{esc(when)}</span>'
-                    if when and not re.match(r"^\d{4}-", when)
-                    else esc(when) or "&mdash;"
-                )
-                if slug:
-                    t = f'<a href="lessons/{slug}.html">{esc(b["title"])}</a><span class="tag study">Study</span>'
-                elif b.get("pdf_url"):
-                    t = f'<a href="{b["pdf_url"]}" target="_blank" rel="noopener">{esc(b["title"])}</a><span class="tag">PDF</span>'
-                else:
-                    t = esc(b["title"])
-                body.append(
-                    f'<li class="session"><div class="when">{when_html}</div><div>'
-                    f'<div class="stitle">{t}</div>'
-                    + (f'<p class="point">{esc(b["main_point"])}</p>' if b.get("main_point") else "")
-                    + (f'<p class="passage">{esc(b["passage"])}</p>' if b.get("passage") else "")
-                    + "</div></li>"
-                )
-        if open_list:
-            body.append("</ol>")
-
+    body += render_year_blocks(year, studied)
     body.append("</main>")
     return PAGE.format(
         theme="",
         title="StuMin Scope &amp; Sequence",
-        desc="Student ministry scope and sequence with Bible study notes for each session.",
+        desc=f"Student ministry scope and sequence for {CURRENT_YEAR}, with Bible study notes for each session.",
+        css=CSS,
+        body="\n".join(body),
+    )
+
+
+def render_archive(curriculum, studied):
+    """Prior years, kept for reference. Most sessions still link to their lesson PDF."""
+    older = [y for y in curriculum["years"] if y["year"] != CURRENT_YEAR]
+    linked = sum(y["linked_count"] for y in older)
+
+    body = [
+        '<header class="site"><div class="wrap">',
+        '<a class="backlink" href="index.html">&larr; Current year</a>',
+        '<p class="kicker">Student Ministry</p>',
+        "<h1>Archive</h1>",
+        f'<p class="sub">Previous rotations, {esc(older[-1]["year"])} through '
+        f'{esc(older[0]["year"])}. {linked} of these sessions still have their lesson guide '
+        "linked.</p>",
+        '<div class="yearnav">',
+    ]
+    for y in older:
+        body.append(f'<a href="#y{y["year"]}">{y["year"]}</a>')
+    body.append("</div></div></header>")
+    body.append('<main class="wrap">')
+    body.append(
+        '<div class="note">These years are here for reference &mdash; passages, main points, and '
+        "the original lesson PDFs. The four-section study notes are only written for the current "
+        f'year. <a href="index.html">Back to {esc(CURRENT_YEAR)}</a>.</div>'
+    )
+    for y in older:
+        body.append(
+            f'<h2 id="y{y["year"]}" class="unit" style="margin-top:3rem">{y["year"]} '
+            f'&middot; {y["session_count"]} sessions</h2>'
+        )
+        body += render_year_blocks(y, studied)
+    body.append("</main>")
+    return PAGE.format(
+        theme="",
+        title="Archive &middot; StuMin Scope &amp; Sequence",
+        desc="Previous years of the student ministry scope and sequence, with links to each lesson guide.",
         css=CSS,
         body="\n".join(body),
     )
@@ -509,7 +553,10 @@ def main():
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf8") as f:
         f.write(render_index(curriculum, by_drive))
 
-    print(f"built index.html + {len(slugs)} lesson pages")
+    with open(os.path.join(ROOT, "archive.html"), "w", encoding="utf8") as f:
+        f.write(render_archive(curriculum, by_drive))
+
+    print(f"built index.html + archive.html + {len(slugs)} lesson pages")
 
 
 if __name__ == "__main__":
