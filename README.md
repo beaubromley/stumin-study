@@ -3,7 +3,7 @@
 A browsable viewer for the student ministry Scope & Sequence, with Bible study notes for
 each session that has a lesson guide.
 
-**Live site:** https://<username>.github.io/stumin-study/ (update after enabling Pages)
+**Live site:** <https://beaubromley.github.io/stumin-study/>
 
 ## What's here
 
@@ -23,6 +23,10 @@ each session that has a lesson guide.
   5. **Deeper study** — a collapsible block with a summary, themes in the wider biblical
      story, hard or debated points, Hebrew/Greek/Aramaic word studies, and cross-references.
 
+  On screens wider than 72rem the scripture sits in its own sticky column so it stays in
+  view while the commentary and questions scroll beside it. Below that it collapses to a
+  single column in reading order. Prev/next buttons appear above and below each lesson.
+
 Currently 13 sessions have full notes: **Aug 16 – Nov 1, 2026**. Those are the weeks the
 spreadsheet has Drive links for. Later sessions are listed on the index with their passage
 and main point, ready to fill in when the guides are published.
@@ -37,6 +41,9 @@ python scripts/build.py
 ```
 
 Everything the build needs is committed in `data/`, so no network access is required.
+
+`SOURCE_SHEET_URL` in `scripts/build.py` points at the Google Sheets original; it is linked
+from the index header and every page footer.
 
 ### Data pipeline
 

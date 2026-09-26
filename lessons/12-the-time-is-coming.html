@@ -35,7 +35,7 @@ body{
   font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   letter-spacing:-.003em;
 }
-.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+.wrap{max-width:92rem;margin:0 auto;padding:0 2rem}
 a{color:var(--accent);text-underline-offset:2px}
 h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
@@ -78,7 +78,7 @@ li.session:last-child{border-bottom:0}
 .stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
 .stitle a{text-decoration:none}
 .stitle a:hover{text-decoration:underline}
-.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0;max-width:58rem}
 .passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
 .tag{
   display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
@@ -89,12 +89,14 @@ li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);f
 .note{
   background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
   padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+  max-width:62rem;
 }
 
 /* ---- lesson ---- */
 .lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
 .lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
 .mainpoint{
+  max-width:62rem;
   border-left:3px solid var(--accent);background:var(--accent-soft);
   padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
   font-size:1.02rem;
@@ -188,19 +190,52 @@ details.deep[open]>summary{border-bottom:1px solid var(--line)}
 .xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
 .xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
 .xref .n{color:var(--muted)}
-.pager{
-  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
-  padding-top:1.25rem;border-top:1px solid var(--line);
-  font:500 .85rem/1.4 "Inter",sans-serif;
+/* Scripture sits in its own column on wide screens and stays put while the
+   commentary and questions scroll beside it. */
+main.lesson{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:72rem){
+  main.lesson{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 3.5rem;align-items:start}
+  main.lesson .col-left{
+    position:sticky;top:3.3rem;max-height:calc(100vh - 4.5rem);
+    overflow-y:auto;overscroll-behavior:contain;padding-right:.9rem;
+  }
+  main.lesson .col-left::-webkit-scrollbar{width:8px}
+  main.lesson .col-left::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  main.lesson .col-right>section:first-child{padding-top:2.25rem}
 }
-.pager a{text-decoration:none;max-width:45%}
-.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* prev / next */
+.navbtn{
+  display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
+  font:600 .82rem/1 "Inter",sans-serif;color:var(--ink);background:var(--panel);
+  border:1px solid var(--line);border-radius:99px;padding:.55rem .9rem;
+}
+.navbtn:hover{border-color:var(--accent);color:var(--accent)}
+.navbtn.off{opacity:.35;pointer-events:none}
+.navbtn .lbl{max-width:15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toppager{
+  display:flex;align-items:center;gap:.6rem;margin:1.1rem 0 0;flex-wrap:wrap;
+}
+.toppager .count{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);margin-left:auto;
+}
+.pager{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+}
+.pager .navbtn{padding:.7rem 1.1rem}
+.pager .dir{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.15rem}
+.pager .navbtn .lbl{max-width:18rem}
+.pager .stack{display:flex;flex-direction:column}
 .pager .nx{text-align:right}
 footer.site{
   margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
 }
 footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
 @media (max-width:34rem){
+  .wrap{padding:0 1.25rem}
+  .navbtn .lbl,.pager .navbtn .lbl{max-width:9rem}
   li.session{grid-template-columns:1fr;gap:.15rem}
   .when{padding-top:0}
   .xref{grid-template-columns:1fr;gap:.1rem}
@@ -220,13 +255,19 @@ footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;c
 <h1>The Time is Coming</h1>
 <div class="mainpoint">We must be rooted in God's Word and ready for Jesus's return.</div>
 <p class="meta">2026-10-25 &middot; Matthew 24; Mark 13; Luke 21 &middot; <a href="https://drive.google.com/file/d/1WsxqKacYb6MgcQtC3_ZJl0Rkj8xq0SQr/view?usp=drive_link" target="_blank" rel="noopener">Lesson PDF</a></p>
+<div class="toppager">
+<a class="navbtn" href="11-stones-would-cry-out.html">&larr; <span class="lbl">The Stones Would Cry Out</span></a>
+<a class="navbtn nx" href="13-surely-not-i.html"><span class="lbl">Surely Not I?</span> &rarr;</a>
+<span class="count">Session 12 of 13</span>
+</div>
 </div></header>
 <nav class="sections"><div class="wrap">
 <a href="#scripture">Scripture</a><a href="#context">Context</a>
 <a href="#commentary">Commentary</a><a href="#questions">Questions</a>
 <a href="#deeper">Deeper study</a>
 </div></nav>
-<main class="wrap">
+<main class="wrap lesson">
+<div class="col-left">
 <section id="scripture"><p class="shead">Scripture</p>
 <div class="block">
 <div class="blocktitle">We Can Expect Persecution</div>
@@ -245,6 +286,8 @@ and will lead many astray. <span class="v">7</span>“When you hear of wars and 
 </div>
 <p class="attrib">World English Bible &mdash; public domain.</p>
 </section>
+</div>
+<div class="col-right">
 <section id="context"><p class="shead">Context</p>
 <p>This isn't a public sermon. Peter, James, John, and Andrew asked Jesus a private question on the Mount of Olives, and Mark 13 is His answer to four men, sitting down.</p>
 <p>Notice what He doesn't give them: a timeline. He does not satisfy their curiosity so much as direct their consciences. The instructions are practical — don't be deceived, don't be alarmed, keep proclaiming, stay awake.</p>
@@ -294,12 +337,14 @@ and will lead many astray. <span class="v">7</span>“When you hear of wars and 
 <div class="r"><a href="https://www.biblegateway.com/passage/?search=1+Thessalonians+5:1-11&version=ESV" target="_blank" rel="noopener">1 Thessalonians 5:1-11</a></div><div class="n">The day coming like a thief — and why believers are not in the dark about it.</div>
 </div></div></details></section>
 <div class="pager">
-<a href="11-stones-would-cry-out.html"><span class="dir">Previous</span>The Stones Would Cry Out</a>
-<a class="nx" href="13-surely-not-i.html"><span class="dir">Next</span>Surely Not I?</a>
+<a class="navbtn" href="11-stones-would-cry-out.html"><span class="stack"><span class="dir">Previous</span><span class="lbl">&larr; The Stones Would Cry Out</span></span></a>
+<a class="navbtn nx" href="13-surely-not-i.html"><span class="stack"><span class="dir">Next</span><span class="lbl">Surely Not I? &rarr;</span></span></a>
+</div>
 </div></main>
 <footer class="site"><div class="wrap">
 Scripture quotations are from the <strong>World English Bible</strong> (public domain).
-Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+Session titles, main points, and the schedule come from the
+<a href="https://docs.google.com/spreadsheets/d/1l0UIR4H1loPhVq1g0x2ELORtiWrhULQk/edit" target="_blank" rel="noopener">StuMin Scope &amp; Sequence</a>
 (Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
 site are original summaries written for group prep, not reproductions of the lesson guides.
 </div></footer>

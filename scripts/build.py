@@ -14,6 +14,11 @@ LESSON_DIR = os.path.join(ROOT, "lessons")
 
 CURRENT_YEAR = "2026-2027"
 
+# The master workbook this site is generated from.
+SOURCE_SHEET_URL = (
+    "https://docs.google.com/spreadsheets/d/1l0UIR4H1loPhVq1g0x2ELORtiWrhULQk/edit"
+)
+
 
 def load(name):
     with open(os.path.join(DATA, name), encoding="utf8") as f:
@@ -61,7 +66,7 @@ body{
   font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   letter-spacing:-.003em;
 }
-.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+.wrap{max-width:92rem;margin:0 auto;padding:0 2rem}
 a{color:var(--accent);text-underline-offset:2px}
 h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
@@ -104,7 +109,7 @@ li.session:last-child{border-bottom:0}
 .stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
 .stitle a{text-decoration:none}
 .stitle a:hover{text-decoration:underline}
-.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0;max-width:58rem}
 .passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
 .tag{
   display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
@@ -115,12 +120,14 @@ li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);f
 .note{
   background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
   padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+  max-width:62rem;
 }
 
 /* ---- lesson ---- */
 .lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
 .lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
 .mainpoint{
+  max-width:62rem;
   border-left:3px solid var(--accent);background:var(--accent-soft);
   padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
   font-size:1.02rem;
@@ -214,19 +221,52 @@ details.deep[open]>summary{border-bottom:1px solid var(--line)}
 .xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
 .xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
 .xref .n{color:var(--muted)}
-.pager{
-  display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 0;
-  padding-top:1.25rem;border-top:1px solid var(--line);
-  font:500 .85rem/1.4 "Inter",sans-serif;
+/* Scripture sits in its own column on wide screens and stays put while the
+   commentary and questions scroll beside it. */
+main.lesson{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:72rem){
+  main.lesson{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 3.5rem;align-items:start}
+  main.lesson .col-left{
+    position:sticky;top:3.3rem;max-height:calc(100vh - 4.5rem);
+    overflow-y:auto;overscroll-behavior:contain;padding-right:.9rem;
+  }
+  main.lesson .col-left::-webkit-scrollbar{width:8px}
+  main.lesson .col-left::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  main.lesson .col-right>section:first-child{padding-top:2.25rem}
 }
-.pager a{text-decoration:none;max-width:45%}
-.pager .dir{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* prev / next */
+.navbtn{
+  display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
+  font:600 .82rem/1 "Inter",sans-serif;color:var(--ink);background:var(--panel);
+  border:1px solid var(--line);border-radius:99px;padding:.55rem .9rem;
+}
+.navbtn:hover{border-color:var(--accent);color:var(--accent)}
+.navbtn.off{opacity:.35;pointer-events:none}
+.navbtn .lbl{max-width:15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toppager{
+  display:flex;align-items:center;gap:.6rem;margin:1.1rem 0 0;flex-wrap:wrap;
+}
+.toppager .count{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);margin-left:auto;
+}
+.pager{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+}
+.pager .navbtn{padding:.7rem 1.1rem}
+.pager .dir{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.15rem}
+.pager .navbtn .lbl{max-width:18rem}
+.pager .stack{display:flex;flex-direction:column}
 .pager .nx{text-align:right}
 footer.site{
   margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
 }
 footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
 @media (max-width:34rem){
+  .wrap{padding:0 1.25rem}
+  .navbtn .lbl,.pager .navbtn .lbl{max-width:9rem}
   li.session{grid-template-columns:1fr;gap:.15rem}
   .when{padding-top:0}
   .xref{grid-template-columns:1fr;gap:.1rem}
@@ -256,7 +296,8 @@ PAGE = """<!doctype html>
 {body}
 <footer class="site"><div class="wrap">
 Scripture quotations are from the <strong>World English Bible</strong> (public domain).
-Session titles, main points, and the schedule come from the StuMin Scope &amp; Sequence
+Session titles, main points, and the schedule come from the
+<a href="{sheet}" target="_blank" rel="noopener">StuMin Scope &amp; Sequence</a>
 (Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
 site are original summaries written for group prep, not reproductions of the lesson guides.
 </div></footer>
@@ -285,7 +326,46 @@ def render_scripture(sections):
     return "\n".join(out)
 
 
-def render_lesson(slug, lesson, scripture, session, prev_link, next_link):
+def nav_button(link, direction):
+    """A prev/next pill. `link` is (href, title) or None, which renders disabled."""
+    arrow = "&larr;" if direction == "prev" else "&rarr;"
+    if not link:
+        label = "First lesson" if direction == "prev" else "Last lesson"
+        cls = "navbtn off" + ("" if direction == "prev" else " nx")
+        inner = f'{arrow} <span class="lbl">{label}</span>'
+        if direction == "next":
+            inner = f'<span class="lbl">{label}</span> {arrow}'
+        return f'<span class="{cls}">{inner}</span>'
+    href, title = link
+    if direction == "prev":
+        return f'<a class="navbtn" href="{href}">{arrow} <span class="lbl">{esc(title)}</span></a>'
+    return f'<a class="navbtn nx" href="{href}"><span class="lbl">{esc(title)}</span> {arrow}</a>'
+
+
+def full_pager(prev_link, next_link):
+    """The bottom pager: same pills, with a Previous/Next caption above each."""
+    out = ['<div class="pager">']
+    if prev_link:
+        out.append(
+            f'<a class="navbtn" href="{prev_link[0]}"><span class="stack">'
+            f'<span class="dir">Previous</span>'
+            f'<span class="lbl">&larr; {esc(prev_link[1])}</span></span></a>'
+        )
+    else:
+        out.append("<span></span>")
+    if next_link:
+        out.append(
+            f'<a class="navbtn nx" href="{next_link[0]}"><span class="stack">'
+            f'<span class="dir">Next</span>'
+            f'<span class="lbl">{esc(next_link[1])} &rarr;</span></span></a>'
+        )
+    else:
+        out.append("<span></span>")
+    out.append("</div>")
+    return out
+
+
+def render_lesson(slug, lesson, scripture, session, prev_link, next_link, pos, total):
     title = session["title"]
     passage = session.get("passage") or ""
     date = session.get("date") or ""
@@ -303,16 +383,24 @@ def render_lesson(slug, lesson, scripture, session, prev_link, next_link):
             else ""
         )
         + "</p>",
+        '<div class="toppager">',
+        nav_button(prev_link, "prev"),
+        nav_button(next_link, "next"),
+        f'<span class="count">Session {pos} of {total}</span>',
+        "</div>",
         "</div></header>",
         '<nav class="sections"><div class="wrap">',
         '<a href="#scripture">Scripture</a><a href="#context">Context</a>',
         '<a href="#commentary">Commentary</a><a href="#questions">Questions</a>',
         '<a href="#deeper">Deeper study</a>',
         "</div></nav>",
-        '<main class="wrap">',
+        '<main class="wrap lesson">',
+        '<div class="col-left">',
         '<section id="scripture"><p class="shead">Scripture</p>',
         render_scripture(scripture),
         "</section>",
+        "</div>",
+        '<div class="col-right">',
         '<section id="context"><p class="shead">Context</p>',
     ]
     for para in lesson["context"]:
@@ -366,23 +454,12 @@ def render_lesson(slug, lesson, scripture, session, prev_link, next_link):
         )
     body.append("</div></div></details></section>")
 
-    body.append('<div class="pager">')
-    if prev_link:
-        body.append(
-            f'<a href="{prev_link[0]}"><span class="dir">Previous</span>{esc(prev_link[1])}</a>'
-        )
-    else:
-        body.append("<span></span>")
-    if next_link:
-        body.append(
-            f'<a class="nx" href="{next_link[0]}"><span class="dir">Next</span>{esc(next_link[1])}</a>'
-        )
-    else:
-        body.append("<span></span>")
+    body += full_pager(prev_link, next_link)
     body.append("</div></main>")
 
     return PAGE.format(
         theme="",
+        sheet=SOURCE_SHEET_URL,
         title=f"{title} &middot; StuMin Study",
         desc=esc(session.get("main_point") or title),
         css=CSS,
@@ -460,6 +537,7 @@ def render_index(curriculum, studied):
         '<div class="yearnav">',
         f'<a class="on" href="index.html">{esc(CURRENT_YEAR)}</a>',
         '<a href="archive.html">Past years &rarr;</a>',
+        f'<a href="{SOURCE_SHEET_URL}" target="_blank" rel="noopener">Source sheet &#8599;</a>',
         "</div></div></header>",
         '<main class="wrap">',
         f'<div class="note"><strong>{len(studied)} sessions</strong> have the full four-section '
@@ -473,6 +551,7 @@ def render_index(curriculum, studied):
     body.append("</main>")
     return PAGE.format(
         theme="",
+        sheet=SOURCE_SHEET_URL,
         title="StuMin Scope &amp; Sequence",
         desc=f"Student ministry scope and sequence for {CURRENT_YEAR}, with Bible study notes for each session.",
         css=CSS,
@@ -513,6 +592,7 @@ def render_archive(curriculum, studied):
     body.append("</main>")
     return PAGE.format(
         theme="",
+        sheet=SOURCE_SHEET_URL,
         title="Archive &middot; StuMin Scope &amp; Sequence",
         desc="Previous years of the student ministry scope and sequence, with links to each lesson guide.",
         css=CSS,
@@ -545,7 +625,14 @@ def main():
             else None
         )
         page = render_lesson(
-            slug, lessons[slug], scripture[slug], session_by_slug[slug], prev_link, next_link
+            slug,
+            lessons[slug],
+            scripture[slug],
+            session_by_slug[slug],
+            prev_link,
+            next_link,
+            i + 1,
+            len(slugs),
         )
         with open(os.path.join(LESSON_DIR, f"{slug}.html"), "w", encoding="utf8") as f:
             f.write(page)
