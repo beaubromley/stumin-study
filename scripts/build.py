@@ -621,8 +621,10 @@ def main():
     current = next(y for y in curriculum["years"] if y["year"] == CURRENT_YEAR)
     sessions = [b for b in current["blocks"] if b["kind"] == "session"]
     linked = [b for b in sessions if b.get("drive_id")]
-    if len(linked) != len(drive_slugs):
-        raise SystemExit(f"expected {len(drive_slugs)} linked sessions, found {len(linked)}")
+    # Drive-linked lessons are numbered in schedule order. Sessions linked after the last
+    # lesson (guides published but no notes yet) are fine; fewer linked than lessons is not.
+    if len(linked) < len(drive_slugs):
+        raise SystemExit(f"expected at least {len(drive_slugs)} linked sessions, found {len(linked)}")
     by_drive = {s["drive_id"]: slug for s, slug in zip(linked, drive_slugs)}
     session_by_slug = {slug: s for s, slug in zip(linked, drive_slugs)}
     for slug, d in dated.items():
