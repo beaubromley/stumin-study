@@ -64,8 +64,8 @@ PASSAGES = {
         ("Jesus Knew the Cost", ["Mark 14:22-31"]),
     ],
     "14-he-breathed-his-last": [
-        ("Jesus Was Crucified", ["Mark 15:21-32", "Luke 23:39-43"]),
-        ("Jesus Breathed His Last", ["Mark 15:33-39", "John 19:28-30"]),
+        ("Jesus Endured Torture", ["Mark 15:16-20", "Mark 15:29-32"]),
+        ("Jesus Endured Death", ["Mark 15:33-47"]),
     ],
 }
 

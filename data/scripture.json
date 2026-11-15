@@ -1272,51 +1272,41 @@
  ],
  "14-he-breathed-his-last": [
   {
-   "title": "Jesus Was Crucified",
+   "title": "Jesus Endured Torture",
    "passages": [
     {
-     "reference": "Mark 15:21-32",
+     "reference": "Mark 15:16-20",
      "verses": [
       {
        "chapter": 15,
-       "verse": 21,
-       "text": "They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus, to go with them, that he might bear his cross."
+       "verse": 16,
+       "text": "The soldiers led him away within the court, which is the Praetorium; and they called together the whole cohort."
       },
       {
        "chapter": 15,
-       "verse": 22,
-       "text": "They brought him to the place called Golgotha, which is, being interpreted, “The place of a skull.”"
+       "verse": 17,
+       "text": "They clothed him with purple, and weaving a crown of thorns, they put it on him."
       },
       {
        "chapter": 15,
-       "verse": 23,
-       "text": "They offered him wine mixed with myrrh to drink, but he didn’t take it."
+       "verse": 18,
+       "text": "They began to salute him, “Hail, King of the Jews!”"
       },
       {
        "chapter": 15,
-       "verse": 24,
-       "text": "Crucifying him, they parted his garments among them, casting lots on them, what each should take."
+       "verse": 19,
+       "text": "They struck his head with a reed, and spat on him, and bowing their knees, did homage to him."
       },
       {
        "chapter": 15,
-       "verse": 25,
-       "text": "It was the third hour,\n and they crucified him."
-      },
-      {
-       "chapter": 15,
-       "verse": 26,
-       "text": "The superscription of his accusation was written over him, “THE KING OF THE JEWS.”"
-      },
-      {
-       "chapter": 15,
-       "verse": 27,
-       "text": "With him they crucified two robbers; one on his right hand, and one on his left."
-      },
-      {
-       "chapter": 15,
-       "verse": 28,
-       "text": "The Scripture was fulfilled, which says, “He was counted with transgressors.”"
-      },
+       "verse": 20,
+       "text": "When they had mocked him, they took the purple off him, and put his own garments on him. They led him out to crucify him."
+      }
+     ]
+    },
+    {
+     "reference": "Mark 15:29-32",
+     "verses": [
       {
        "chapter": 15,
        "verse": 29,
@@ -1338,44 +1328,14 @@
        "text": "Let the Christ, the King of Israel, now come down from the cross, that we may see and believe him.”\n Those who were crucified with him also insulted him."
       }
      ]
-    },
-    {
-     "reference": "Luke 23:39-43",
-     "verses": [
-      {
-       "chapter": 23,
-       "verse": 39,
-       "text": "One of the criminals who was hanged insulted him, saying, “If you are the Christ, save yourself and us!”"
-      },
-      {
-       "chapter": 23,
-       "verse": 40,
-       "text": "But the other answered, and rebuking him said, “Don’t you even fear God, seeing you are under the same condemnation?"
-      },
-      {
-       "chapter": 23,
-       "verse": 41,
-       "text": "And we indeed justly, for we receive the due reward for our deeds, but this man has done nothing wrong.”"
-      },
-      {
-       "chapter": 23,
-       "verse": 42,
-       "text": "He said to Jesus, “Lord, remember me when you come into your Kingdom.”"
-      },
-      {
-       "chapter": 23,
-       "verse": 43,
-       "text": "Jesus said to him,\n“Assuredly I tell you, today you will be with me in Paradise.”"
-      }
-     ]
     }
    ]
   },
   {
-   "title": "Jesus Breathed His Last",
+   "title": "Jesus Endured Death",
    "passages": [
     {
-     "reference": "Mark 15:33-39",
+     "reference": "Mark 15:33-47",
      "verses": [
       {
        "chapter": 15,
@@ -1411,26 +1371,46 @@
        "chapter": 15,
        "verse": 39,
        "text": "When the centurion, who stood by opposite him, saw that he cried out like this and breathed his last, he said, “Truly this man was the Son of God!”"
-      }
-     ]
-    },
-    {
-     "reference": "John 19:28-30",
-     "verses": [
-      {
-       "chapter": 19,
-       "verse": 28,
-       "text": "After this, Jesus, seeing that all things were now finished, that the Scripture might be fulfilled, said,\n“I am thirsty.”"
       },
       {
-       "chapter": 19,
-       "verse": 29,
-       "text": "Now a vessel full of vinegar was set there; so they put a sponge full of the vinegar on hyssop, and held it at his mouth."
+       "chapter": 15,
+       "verse": 40,
+       "text": "There were also women watching from afar, among whom were both Mary Magdalene, and Mary the mother of James the less and of Joses, and Salome;"
       },
       {
-       "chapter": 19,
-       "verse": 30,
-       "text": "When Jesus therefore had received the vinegar, he said,\n“It is finished.” He bowed his head, and gave up his spirit."
+       "chapter": 15,
+       "verse": 41,
+       "text": "who, when he was in Galilee, followed him, and served him; and many other women who came up with him to Jerusalem."
+      },
+      {
+       "chapter": 15,
+       "verse": 42,
+       "text": "When evening had now come, because it was the Preparation Day, that is, the day before the Sabbath,"
+      },
+      {
+       "chapter": 15,
+       "verse": 43,
+       "text": "Joseph of Arimathaea, a prominent council member who also himself was looking for God’s Kingdom, came. He boldly went in to Pilate, and asked for Jesus’ body."
+      },
+      {
+       "chapter": 15,
+       "verse": 44,
+       "text": "Pilate marveled if he were already dead; and summoning the centurion, he asked him whether he had been dead long."
+      },
+      {
+       "chapter": 15,
+       "verse": 45,
+       "text": "When he found out from the centurion, he granted the body to Joseph."
+      },
+      {
+       "chapter": 15,
+       "verse": 46,
+       "text": "He bought a linen cloth, and taking him down, wound him in the linen cloth, and laid him in a tomb which had been cut out of a rock. He rolled a stone against the door of the tomb."
+      },
+      {
+       "chapter": 15,
+       "verse": 47,
+       "text": "Mary Magdalene and Mary, the mother of Joses, saw where he was laid."
       }
      ]
     }
