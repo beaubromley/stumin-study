@@ -63,6 +63,10 @@ PASSAGES = {
         ("Jesus Endured Betrayal", ["Mark 14:17-21"]),
         ("Jesus Knew the Cost", ["Mark 14:22-31"]),
     ],
+    "14-he-breathed-his-last": [
+        ("Jesus Was Crucified", ["Mark 15:21-32", "Luke 23:39-43"]),
+        ("Jesus Breathed His Last", ["Mark 15:33-39", "John 19:28-30"]),
+    ],
 }
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "data", "scripture.json")
@@ -82,8 +86,11 @@ def fetch(ref):
 
 
 def main():
-    out = {}
+    # Keep what is already fetched; only hit the network for new slugs.
+    out = json.load(open(OUT, encoding="utf8")) if os.path.exists(OUT) else {}
     for slug, sections in PASSAGES.items():
+        if slug in out:
+            continue
         out[slug] = []
         for title, refs in sections:
             passages = []

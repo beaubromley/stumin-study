@@ -8,7 +8,7 @@ each session that has a lesson guide.
 ## What's here
 
 - **`index.html`** — the current year (2026-27), starting Fall 2026. Every session grouped
-  by volume and unit, with date, main point, and passage. The 13 with full study notes link
+  by volume and unit, with date, main point, and passage. The 14 with full study notes link
   to their own page.
 - **`archive.html`** — the five previous rotations (2021-22 through 2025-26), 267 sessions,
   264 of which still link to their original Google Drive lesson guide. Reference only; no
@@ -27,8 +27,9 @@ each session that has a lesson guide.
   view while the commentary and questions scroll beside it. Below that it collapses to a
   single column in reading order. Prev/next buttons appear above and below each lesson.
 
-Currently 13 sessions have full notes: **Aug 16 – Nov 1, 2026**. Those are the weeks the
-spreadsheet has Drive links for. Later sessions are listed on the index with their passage
+Currently 14 sessions have full notes: **Aug 16 – Nov 1, 2026** (the weeks the spreadsheet
+has Drive links for) plus **Nov 15** (*He Breathed His Last*), which has no guide yet and is
+attached to the schedule by date via `DATED_LESSONS` in `scripts/build.py`. Later sessions are listed on the index with their passage
 and main point, ready to fill in when the guides are published.
 
 `CURRENT_YEAR` at the top of `scripts/build.py` decides which worksheet is the index and

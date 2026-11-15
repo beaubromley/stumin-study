@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>He Breathed His Last &middot; StuMin Study</title>
+<meta name="description" content="He Breathed His Last">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📖</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1c1b19; --muted:#5d5a54; --faint:#8a857c;
+  --line:#e4e0d8; --accent:#b4472f; --accent-soft:#f6e9e4; --accent-2:#3c6e63;
+  --shadow:0 1px 2px rgba(28,27,25,.05), 0 8px 24px rgba(28,27,25,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+    --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14140f; --panel:#1c1c18; --ink:#eceae4; --muted:#a8a49b; --faint:#807b72;
+  --line:#2e2e28; --accent:#e08e6f; --accent-soft:#2b201c; --accent-2:#7fb5a6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:15.5px/1.68 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.wrap{max-width:92rem;margin:0 auto;padding:0 2rem}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,.ui{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1{font-size:1.85rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font-size:1.15rem;letter-spacing:-.01em;margin:0}
+h3{font-size:1rem;margin:0 0 .35rem}
+
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .wrap{padding-top:1.5rem;padding-bottom:1.5rem}
+.kicker{font:600 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
+.backlink{display:inline-block;font:500 .82rem/1 "Inter",sans-serif;color:var(--muted);text-decoration:none;margin-bottom:1rem}
+.backlink:hover{color:var(--accent)}
+
+/* ---- index ---- */
+.yearnav{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0 0}
+.yearnav a{
+  font:500 .8rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:99px;padding:.42rem .8rem;background:var(--panel);
+}
+.yearnav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volume{margin:2.5rem 0 0}
+.volume h2{font-size:1.3rem;letter-spacing:-.015em}
+.keyverse{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.7rem .9rem;margin:.75rem 0 0;border-radius:0 8px 8px 0;
+  font-size:.92rem;color:var(--ink);
+}
+.unit{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);
+}
+ol.sessions{list-style:none;margin:0;padding:0}
+li.session{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;align-items:start;
+  padding:.8rem 0;border-bottom:1px solid var(--line);
+}
+li.session:last-child{border-bottom:0}
+.when{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--faint);padding-top:.15rem}
+.when .no{color:var(--accent);font-weight:600}
+.stitle{font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.stitle a{text-decoration:none}
+.stitle a:hover{text-decoration:underline}
+.point{color:var(--muted);font-size:.92rem;margin:.15rem 0 0;max-width:58rem}
+.passage{font:500 .78rem/1.4 "Inter",sans-serif;color:var(--accent-2);margin:.3rem 0 0}
+.tag{
+  display:inline-block;font:600 .62rem/1 "Inter",sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:99px;padding:.28rem .5rem;color:var(--faint);margin-left:.4rem;vertical-align:2px;
+}
+.tag.study{border-color:var(--accent);color:var(--accent)}
+li.brk{padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--faint);font:500 .82rem/1.4 "Inter",sans-serif}
+.note{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;margin:1.25rem 0 0;font-size:.9rem;color:var(--muted);box-shadow:var(--shadow);
+  max-width:62rem;
+}
+
+/* ---- lesson ---- */
+.lessonhead{background:var(--panel);border-bottom:1px solid var(--line)}
+.lessonhead .wrap{padding-top:1.25rem;padding-bottom:1.5rem}
+.mainpoint{
+  max-width:62rem;
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.75rem .95rem;border-radius:0 8px 8px 0;margin:1rem 0 0;
+  font-size:1.02rem;
+}
+.meta{font:500 .8rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.meta a{color:var(--accent-2)}
+nav.sections{
+  position:sticky;top:0;z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+nav.sections .wrap{display:flex;gap:.3rem;overflow-x:auto;padding-top:.55rem;padding-bottom:.55rem}
+nav.sections a{
+  white-space:nowrap;font:600 .75rem/1 "Inter",sans-serif;text-decoration:none;color:var(--muted);
+  padding:.45rem .7rem;border-radius:99px;
+}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent)}
+section{padding:2.25rem 0 0}
+.shead{
+  font:700 .72rem/1 "Inter",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.block{margin:0 0 1.75rem}
+.blocktitle{
+  font:600 .95rem/1.3 "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 .5rem;
+}
+.ref{
+  font:600 .78rem/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--faint);
+  margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.ref a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--line)}
+.scripture{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.15rem;box-shadow:var(--shadow);
+  font:1.02rem/1.8 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.003em;
+}
+.scripture p{margin:0}
+.scripture .v{
+  font:600 .62rem/1 "Inter",sans-serif;color:var(--accent);
+  vertical-align:.35em;margin-right:.15rem;
+}
+.attrib{font:400 .74rem/1.5 "Inter",sans-serif;color:var(--faint);margin:.6rem 0 0}
+.cmt{margin:0 0 1.15rem}
+.cmt .ref{margin-bottom:.2rem}
+.cmt p{margin:0;color:var(--ink)}
+details.q{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin:0 0 .6rem;box-shadow:var(--shadow);overflow:hidden;
+}
+details.q>summary{
+  cursor:pointer;list-style:none;padding:.85rem 1rem;
+  font:600 .95rem/1.45 "Inter",sans-serif;letter-spacing:-.005em;
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+details.q>summary::-webkit-details-marker{display:none}
+details.q>summary::before{
+  content:"+";color:var(--accent);font-weight:700;line-height:1.45;flex:none;
+}
+details.q[open]>summary::before{content:"\2212"}
+details.q>summary:hover{background:var(--accent-soft)}
+details.q .ans{padding:0 1rem 1rem 2.1rem;color:var(--muted);font-size:.96rem}
+details.deep{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.deep>summary{
+  cursor:pointer;list-style:none;padding:1rem 1.15rem;
+  font:600 1rem/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary .hint{font:500 .75rem/1 "Inter",sans-serif;color:var(--faint);flex:none}
+details.deep>summary .hint::after{content:"open"}
+details.deep[open]>summary .hint::after{content:"close"}
+details.deep[open]>summary{border-bottom:1px solid var(--line)}
+.deepbody{padding:1.15rem}
+.deepbody h3{
+  font:700 .7rem/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin:1.6rem 0 .6rem;
+}
+.deepbody h3:first-child{margin-top:0}
+.deepbody ul{margin:0;padding-left:1.1rem}
+.deepbody li{margin:0 0 .45rem;font-size:.96rem}
+.word{border-left:2px solid var(--line);padding-left:.85rem;margin:0 0 .8rem}
+.word .term{font-size:1.1rem;font-weight:600}
+.word .translit{font:600 .8rem/1 "Inter",sans-serif;color:var(--accent);margin-left:.4rem}
+.word .lang{font:500 .68rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:.4rem}
+.word p{margin:.3rem 0 0;font-size:.94rem;color:var(--muted)}
+.hardq{margin:0 0 .9rem}
+.hardq .t{font:600 .93rem/1.4 "Inter",sans-serif;margin:0 0 .2rem}
+.hardq p{margin:0;font-size:.94rem;color:var(--muted)}
+.xref{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.3rem .9rem;font-size:.93rem}
+.xref .r{font:600 .82rem/1.6 "Inter",sans-serif}
+.xref .n{color:var(--muted)}
+/* Scripture sits in its own column on wide screens and stays put while the
+   commentary and questions scroll beside it. */
+main.lesson{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:72rem){
+  main.lesson{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 3.5rem;align-items:start}
+  main.lesson .col-left{
+    position:sticky;top:3.3rem;max-height:calc(100vh - 4.5rem);
+    overflow-y:auto;overscroll-behavior:contain;padding-right:.9rem;
+  }
+  main.lesson .col-left::-webkit-scrollbar{width:8px}
+  main.lesson .col-left::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  main.lesson .col-right>section:first-child{padding-top:2.25rem}
+}
+
+/* prev / next */
+.navbtn{
+  display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
+  font:600 .82rem/1 "Inter",sans-serif;color:var(--ink);background:var(--panel);
+  border:1px solid var(--line);border-radius:99px;padding:.55rem .9rem;
+}
+.navbtn:hover{border-color:var(--accent);color:var(--accent)}
+.navbtn.off{opacity:.35;pointer-events:none}
+.navbtn .lbl{max-width:15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toppager{
+  display:flex;align-items:center;gap:.6rem;margin:1.1rem 0 0;flex-wrap:wrap;
+}
+.toppager .count{
+  font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);margin-left:auto;
+}
+.pager{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:3rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--line);
+}
+.pager .navbtn{padding:.7rem 1.1rem}
+.pager .dir{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.15rem}
+.pager .navbtn .lbl{max-width:18rem}
+.pager .stack{display:flex;flex-direction:column}
+.pager .nx{text-align:right}
+footer.site{
+  margin-top:3.5rem;border-top:1px solid var(--line);background:var(--panel);
+}
+footer.site .wrap{padding:1.5rem 1.25rem;font:400 .8rem/1.6 "Inter",sans-serif;color:var(--faint)}
+@media (max-width:34rem){
+  .wrap{padding:0 1.25rem}
+  .navbtn .lbl,.pager .navbtn .lbl{max-width:9rem}
+  li.session{grid-template-columns:1fr;gap:.15rem}
+  .when{padding-top:0}
+  .xref{grid-template-columns:1fr;gap:.1rem}
+  .xref .n{margin-bottom:.5rem}
+}
+@media print{
+  nav.sections,.pager,.backlink{display:none}
+  details.q,details.deep{border:0;box-shadow:none}
+  details.q .ans{display:block}
+}
+</style>
+</head>
+<body>
+<header class="lessonhead"><div class="wrap">
+<a class="backlink" href="../index.html">&larr; All sessions</a>
+<p class="kicker">Unit 28 &middot; Session 2</p>
+<h1>He Breathed His Last</h1>
+
+<p class="meta">2026-11-15 &middot; Matthew 27; Mark 15; Luke 23; John 19</p>
+<div class="toppager">
+<a class="navbtn" href="13-surely-not-i.html">&larr; <span class="lbl">Surely Not I?</span></a>
+<span class="navbtn off nx"><span class="lbl">Last lesson</span> &rarr;</span>
+<span class="count">Session 14 of 14</span>
+</div>
+</div></header>
+<nav class="sections"><div class="wrap">
+<a href="#scripture">Scripture</a><a href="#context">Context</a>
+<a href="#commentary">Commentary</a><a href="#questions">Questions</a>
+<a href="#deeper">Deeper study</a>
+</div></nav>
+<main class="wrap lesson">
+<div class="col-left">
+<section id="scripture"><p class="shead">Scripture</p>
+<div class="block">
+<div class="blocktitle">Jesus Was Crucified</div>
+<div class="ref">Mark 15:21-32<a href="https://www.biblegateway.com/passage/?search=Mark+15:21-32&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">21</span>They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus, to go with them, that he might bear his cross. <span class="v">22</span>They brought him to the place called Golgotha, which is, being interpreted, “The place of a skull.” <span class="v">23</span>They offered him wine mixed with myrrh to drink, but he didn’t take it. <span class="v">24</span>Crucifying him, they parted his garments among them, casting lots on them, what each should take. <span class="v">25</span>It was the third hour,
+ and they crucified him. <span class="v">26</span>The superscription of his accusation was written over him, “THE KING OF THE JEWS.” <span class="v">27</span>With him they crucified two robbers; one on his right hand, and one on his left. <span class="v">28</span>The Scripture was fulfilled, which says, “He was counted with transgressors.” <span class="v">29</span>Those who passed by blasphemed him, wagging their heads, and saying, “Ha! You who destroy the temple, and build it in three days, <span class="v">30</span>save yourself, and come down from the cross!” <span class="v">31</span>Likewise, also the chief priests mocking among themselves with the scribes said, “He saved others. He can’t save himself. <span class="v">32</span>Let the Christ, the King of Israel, now come down from the cross, that we may see and believe him.”
+ Those who were crucified with him also insulted him. </p></div>
+<div class="ref">Luke 23:39-43<a href="https://www.biblegateway.com/passage/?search=Luke+23:39-43&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">39</span>One of the criminals who was hanged insulted him, saying, “If you are the Christ, save yourself and us!” <span class="v">40</span>But the other answered, and rebuking him said, “Don’t you even fear God, seeing you are under the same condemnation? <span class="v">41</span>And we indeed justly, for we receive the due reward for our deeds, but this man has done nothing wrong.” <span class="v">42</span>He said to Jesus, “Lord, remember me when you come into your Kingdom.” <span class="v">43</span>Jesus said to him,
+“Assuredly I tell you, today you will be with me in Paradise.” </p></div>
+</div>
+<div class="block">
+<div class="blocktitle">Jesus Breathed His Last</div>
+<div class="ref">Mark 15:33-39<a href="https://www.biblegateway.com/passage/?search=Mark+15:33-39&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">33</span>When the sixth hour
+ had come, there was darkness over the whole land until the ninth hour. <span class="v">34</span>At the ninth hour Jesus cried with a loud voice, saying,
+“Eloi, Eloi, lama sabachthani?” which is, being interpreted,
+“My God, my God, why have you forsaken me?” <span class="v">35</span>Some of those who stood by, when they heard it, said, “Behold, he is calling Elijah.” <span class="v">36</span>One ran, and filling a sponge full of vinegar, put it on a reed, and gave it to him to drink, saying, “Let him be. Let’s see whether Elijah comes to take him down.” <span class="v">37</span>Jesus cried out with a loud voice, and gave up the spirit. <span class="v">38</span>The veil of the temple was torn in two from the top to the bottom. <span class="v">39</span>When the centurion, who stood by opposite him, saw that he cried out like this and breathed his last, he said, “Truly this man was the Son of God!” </p></div>
+<div class="ref">John 19:28-30<a href="https://www.biblegateway.com/passage/?search=John+19:28-30&version=ESV" target="_blank" rel="noopener">read in ESV &rarr;</a></div>
+<div class="scripture"><p><span class="v">28</span>After this, Jesus, seeing that all things were now finished, that the Scripture might be fulfilled, said,
+“I am thirsty.” <span class="v">29</span>Now a vessel full of vinegar was set there; so they put a sponge full of the vinegar on hyssop, and held it at his mouth. <span class="v">30</span>When Jesus therefore had received the vinegar, he said,
+“It is finished.” He bowed his head, and gave up his spirit. </p></div>
+</div>
+<p class="attrib">World English Bible &mdash; public domain.</p>
+</section>
+</div>
+<div class="col-right">
+<section id="context"><p class="shead">Context</p>
+<p>Every Gospel tells the crucifixion, and each one lingers on different details. Mark, the spine of today's reading, is the starkest: no long speeches from the cross, just a handful of words, a wall of mockery, three hours of darkness, and one loud cry. The Roman centurion's confession is the first time in Mark's story that a human being calls Jesus the Son of God and means it as a conclusion rather than a question.</p>
+<p>Crucifixion was Rome's public warning to slaves and rebels: this is what happens to people who challenge the empire. It was designed to be slow, shameful and visible. The sign over Jesus's head, "The King of the Jews," was Pilate's irony, an intended insult that turned out to be true. Jewish readers also knew that anyone hung on a tree was under a curse (Deuteronomy 21:23), which is why Paul later says Christ became a curse for us.</p>
+<p>Today's passage joins four accounts. Mark gives the frame and the cry of abandonment. Luke adds the criminal who believes. John adds "I am thirsty" and "It is finished." Read together, they show a man in agony who is also fully in control of what is happening.</p>
+</section>
+<section id="commentary"><p class="shead">Commentary</p>
+<div class="cmt"><div class="ref">Mark 15:21</div><p>Simon of Cyrene is pulled out of the crowd and made to carry the cross. He was a bystander on his way in from the country, and Mark names his sons as if the first readers knew them. The likely reading is that the family later became part of the church. A man who was forced into the story ended up inside it.</p></div>
+<div class="cmt"><div class="ref">Mark 15:23</div><p>Wine mixed with myrrh was a mild painkiller, and Jesus refuses it. He chooses to face the full weight of what He came to do with a clear head.</p></div>
+<div class="cmt"><div class="ref">Mark 15:24-28</div><p>Soldiers gamble for His clothes, the sign names Him king, and He hangs between two criminals. Mark's note, "He was counted with transgressors," quotes Isaiah 53:12. The King's throne is a cross and His court is two thieves.</p></div>
+<div class="cmt"><div class="ref">Mark 15:29-32</div><p>The mockery comes from three directions: passersby, the religious leaders, and the men hanging next to Him. "He can't save himself" is the most ironic line in the Gospel. It is true, but not the way they mean it. He stays because He is saving others.</p></div>
+<div class="cmt"><div class="ref">Luke 23:39-43</div><p>One of the two criminals joins the mockery and the other turns. He admits his guilt, says Jesus is innocent, and asks to be remembered. He has no good works to offer, no time to be baptized and nothing to bring but the request. Jesus's answer is immediate and personal: "today you will be with me in Paradise."</p></div>
+<div class="cmt"><div class="ref">Mark 15:33-34</div><p>Darkness at midday. Then the cry, "My God, my God, why have you forsaken me?", which is the opening line of Psalm 22. It is not a loss of faith. It is a real cry from the place where sin's weight lands on Him, and it is still prayer, still addressed to "my God."</p></div>
+<div class="cmt"><div class="ref">John 19:28-30</div><p>"It is finished." John's word is not a sigh of defeat. It is the announcement that the work is complete, the debt paid. Even His death is something He does: He "bowed his head, and gave up his spirit." Nobody takes His life from Him.</p></div>
+<div class="cmt"><div class="ref">Mark 15:37-39</div><p>He cries out and dies, the temple curtain tears from top to bottom, and the centurion, a professional executioner, says, "Truly this man was the Son of God!" The tear runs from the top, so God did the tearing. The way into His presence is opened by the death itself.</p></div>
+</section>
+<section id="questions"><p class="shead">Questions</p>
+<details class="q"><summary>Why do you think Jesus refused the wine mixed with myrrh?</summary><div class="ans">He was not looking for a way around the suffering. He came to take it on fully and with full awareness. It is a small detail, but it shows that He went to the cross on purpose, awake to all of it.</div></details>
+<details class="q"><summary>Why is "He saved others; he can't save himself" such an ironic thing to say?</summary><div class="ans">Because they had it backwards. He could have come down. He stayed because saving others required staying. The mockers thought weakness was proof He wasn't the Messiah, when the willingness to stay was the proof.</div></details>
+<details class="q"><summary>What does the second criminal teach us about how someone is saved?</summary><div class="ans">Almost everything essential in a few sentences. He admitted that he was guilty, recognized that Jesus was not, and asked to be remembered. He had nothing to offer, and Jesus promised him paradise that same day. Salvation is a gift received by someone with empty hands, not a reward earned by someone with a good record.</div></details>
+<details class="q"><summary>What do you make of Jesus's cry, "My God, my God, why have you forsaken me?"</summary><div class="ans">It is a real cry, not a performance. He is quoting Psalm 22, a psalm that starts in anguish and ends in praise, and He is experiencing what it describes. The Son who always lived in unbroken fellowship with the Father takes the separation that our sin earned. It is one of the places in Scripture where we are meant to stop and admit we do not fully understand.</div></details>
+<details class="q"><summary>What does "It is finished" mean for us?</summary><div class="ans">The work of saving us is complete. Nothing is left for us to add. We don't finish it with enough effort, and we can't undo it with enough failure. The right response is gratitude and trust, not an attempt to pay what He already paid.</div></details>
+<details class="q"><summary>The curtain tore and a soldier who had just helped kill Jesus confessed Him. What is Mark showing us?</summary><div class="ans">That His death opens the way to God, and not just for the people we would expect. The curtain kept people out of God's presence, and now it is open. The first person to put it into words is an outsider who watched the whole thing. If He can reach that man, He can reach the people we think are too far gone.</div></details>
+<details class="q"><summary>Why does it matter that Jesus died, and did not just seem to?</summary><div class="ans">Every account is careful about the details: He cried out, breathed His last, and a centurion who had seen many deaths confirmed it. The resurrection only means something if the death was real. It is why the next session, Go and Tell, begins with an empty tomb and not an empty cross.</div></details>
+</section>
+<section id="deeper"><p class="shead">Deeper study</p>
+<details class="deep"><summary>Themes, hard questions, word studies, cross-references<span class="hint"></span></summary><div class="deepbody">
+<h3>Summary</h3><p>Jesus is led out, crucified at Golgotha between two criminals, mocked by passersby, leaders and the men beside Him, and abandoned to darkness for three hours. One criminal repents and is promised paradise. Jesus cries out in the words of Psalm 22, says "It is finished," and gives up His spirit. The temple curtain tears in two, and a Roman centurion confesses that He was the Son of God.</p>
+<h3>Themes in the bigger story</h3><ul>
+<li>The King who rules from a cross: power shown by what He is willing to endure.</li>
+<li>Substitution: the innocent counted with transgressors, bearing what they earned.</li>
+<li>Salvation as gift: a dying thief with nothing to offer and a promise he did not earn.</li>
+<li>Access: the torn curtain and the confession of an outsider.</li>
+<li>Death on His own terms: He is not overpowered, He completes what He came to do.</li>
+</ul>
+<h3>Hard or debated</h3>
+<div class="hardq"><p class="t">The cry of abandonment</p><p>Christians have long disagreed about what was happening. Some say the Father truly turned away as Jesus bore sin. Others stress that He is quoting a psalm that ends in trust and that the Father never stopped loving the Son. Nearly all agree that Jesus took the full weight of our sin and that the cry was genuine. The Trinity was not broken, but something real and costly took place that we cannot fully explain.</p></div>
+<div class="hardq"><p class="t">Why does the sequence of hours differ between Mark and John?</p><p>Mark says Jesus was crucified at the third hour, and John places Pilate's judgment around the sixth hour. Common explanations are that John counts from midnight in Roman style while Mark counts from sunrise, or that the times are rounded and not meant to be exact. Nothing in the doctrine depends on resolving it.</p></div>
+<div class="hardq"><p class="t">Why did God require a death?</p><p>Scripture gives several overlapping pictures: sacrifice, ransom, substitution, victory over evil, and revealing God's love. Different traditions lean on different ones. The Gospels themselves do not choose one and every account shows a death that was both deliberate and for others.</p></div>
+<div class="hardq"><p class="t">"Today you will be with me in Paradise"</p><p>The punctuation of the Greek is not fixed, but the usual reading puts "today" with the promise. Jesus does not say when or how the criminal will be raised, only that fellowship with Him begins that day. The passage also shows that the thief's salvation required no ritual or works beyond trust.</p></div>
+<h3>Key words</h3>
+<div class="word"><span class="term">τετέλεσται</span><span class="translit">tetelestai</span><span class="lang">Greek</span><p>"It is finished." The same verb was used for paying off a debt and for completing a task. The word looks back over the whole work and declares that nothing is left to do.</p></div>
+<div class="word"><span class="term">ἠλί ἠλί λιμὰ σαβαχθανί</span><span class="translit">Eloi, Eloi, lama sabachthani</span><span class="lang">Aramaic</span><p>Jesus speaks Aramaic, the everyday language of Galilee, and the Gospel keeps His words. Mark preserves it, then translates it. Bystanders mistook "Eloi" for "Elijah," which is why they expected a rescue.</p></div>
+<div class="word"><span class="term">καταπέτασμα</span><span class="translit">katapetasma</span><span class="lang">Greek</span><p>"Veil" or "curtain," the heavy cloth in the temple that screened the Most Holy Place. Hebrews 10:19-20 reads its tearing as the opening of a new and living way into God's presence.</p></div>
+<div class="word"><span class="term">παράδεισος</span><span class="translit">paradeisos</span><span class="lang">Greek</span><p>"Paradise," originally a Persian word for a walled garden. In the New Testament it names the place of the blessed presence of God, and it recalls the garden that was lost in Genesis.</p></div>
+<h3>Elsewhere in Scripture</h3><div class="xref">
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Psalm+22&version=ESV" target="_blank" rel="noopener">Psalm 22</a></div><div class="n">The psalm Jesus quotes from the cross. It describes pierced hands and feet, divided clothes and mocking crowds, and ends in praise.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Isaiah+52:13-53:12&version=ESV" target="_blank" rel="noopener">Isaiah 52:13-53:12</a></div><div class="n">The suffering servant, "numbered with the transgressors," bearing the sin of many.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Deuteronomy+21:23&version=ESV" target="_blank" rel="noopener">Deuteronomy 21:23</a></div><div class="n">"He who is hanged is accursed of God" - the background to Galatians 3:13.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=Hebrews+10:19-22&version=ESV" target="_blank" rel="noopener">Hebrews 10:19-22</a></div><div class="n">The torn curtain read as an open way into God's presence.</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=2+Corinthians+5:21&version=ESV" target="_blank" rel="noopener">2 Corinthians 5:21</a></div><div class="n">"For him who knew no sin he made to be sin on our behalf; so that in him we might become the righteousness of God."</div>
+<div class="r"><a href="https://www.biblegateway.com/passage/?search=John+10:17-18&version=ESV" target="_blank" rel="noopener">John 10:17-18</a></div><div class="n">"No one takes it away from me, but I lay it down by myself."</div>
+</div></div></details></section>
+<div class="pager">
+<a class="navbtn" href="13-surely-not-i.html"><span class="stack"><span class="dir">Previous</span><span class="lbl">&larr; Surely Not I?</span></span></a>
+<span></span>
+</div>
+</div></main>
+<footer class="site"><div class="wrap">
+Scripture quotations are from the <strong>World English Bible</strong> (public domain).
+Session titles, main points, and the schedule come from the
+<a href="https://docs.google.com/spreadsheets/d/1l0UIR4H1loPhVq1g0x2ELORtiWrhULQk/edit" target="_blank" rel="noopener">StuMin Scope &amp; Sequence</a>
+(Lifeway curriculum); the context, commentary, questions, and deeper-study notes on this
+site are original summaries written for group prep, not reproductions of the lesson guides.
+</div></footer>
+</body>
+</html>

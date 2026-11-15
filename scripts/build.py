@@ -29,6 +29,11 @@ def esc(s):
     return html.escape(s or "", quote=False)
 
 
+# Lessons for sessions that have no Drive guide yet, attached to the schedule by date.
+# slug -> session date. These sort after the Drive-linked lessons.
+DATED_LESSONS = {"14-he-breathed-his-last": "2026-11-15"}
+
+
 def slug_for(session, order):
     """Map a curriculum session onto a lesson slug by its Drive id."""
     return order.get(session.get("drive_id"))
@@ -375,7 +380,11 @@ def render_lesson(slug, lesson, scripture, session, prev_link, next_link, pos, t
         '<a class="backlink" href="../index.html">&larr; All sessions</a>',
         f'<p class="kicker">Unit {esc(session.get("unit") or "")} &middot; Session {esc(session.get("session") or "")}</p>',
         f"<h1>{esc(title)}</h1>",
-        f'<div class="mainpoint">{esc(session.get("main_point") or "")}</div>',
+        (
+            f'<div class="mainpoint">{esc(session["main_point"])}</div>'
+            if session.get("main_point")
+            else ""
+        ),
         f'<p class="meta">{esc(date)} &middot; {esc(passage)}'
         + (
             f' &middot; <a href="{session["pdf_url"]}" target="_blank" rel="noopener">Lesson PDF</a>'
@@ -498,7 +507,7 @@ def render_year_blocks(year, studied):
             if not open_list:
                 body.append('<ol class="sessions">')
                 open_list = True
-            slug = studied.get(b.get("drive_id"))
+            slug = studied.get(b.get("drive_id")) or studied.get("date:" + (b.get("date") or ""))
             when = b.get("date") or ""
             when_html = (
                 f'<span class="no">{esc(when)}</span>'
@@ -540,10 +549,10 @@ def render_index(curriculum, studied):
         f'<a href="{SOURCE_SHEET_URL}" target="_blank" rel="noopener">Source sheet &#8599;</a>',
         "</div></div></header>",
         '<main class="wrap">',
-        f'<div class="note"><strong>{len(studied)} sessions</strong> have the full four-section '
+        f'<div class="note"><strong>{len(set(studied.values()))} sessions</strong> have the full four-section '
         "study (scripture, context, commentary, questions) plus a deeper-study block. Those are "
-        "the weeks with linked lesson guides &mdash; Aug 16 through Nov 1, 2026. Everything after "
-        "that is listed here with its passage and main point, ready to fill in when the guides "
+        "the weeks with linked lesson guides &mdash; Aug 16 through Nov 1, 2026 &mdash; plus "
+        "Nov 15. Everything else after that is listed here with its passage and main point, ready to fill in when the guides "
         f"land. Earlier years ({esc(older[-1]['year'])} through {esc(older[0]['year'])}) are in "
         'the <a href="archive.html">archive</a>.</div>',
     ]
@@ -606,13 +615,22 @@ def main():
     scripture = load("scripture.json")
 
     # Order lesson slugs by their numeric prefix, and map Drive ids -> slug
+    dated = {slug: d for slug, d in DATED_LESSONS.items() if slug in lessons}
     slugs = sorted(lessons)
+    drive_slugs = [sl for sl in slugs if sl not in dated]
     current = next(y for y in curriculum["years"] if y["year"] == CURRENT_YEAR)
-    linked = [b for b in current["blocks"] if b["kind"] == "session" and b.get("drive_id")]
-    if len(linked) != len(slugs):
-        raise SystemExit(f"expected {len(slugs)} linked sessions, found {len(linked)}")
-    by_drive = {s["drive_id"]: slug for s, slug in zip(linked, slugs)}
-    session_by_slug = {slug: s for s, slug in zip(linked, slugs)}
+    sessions = [b for b in current["blocks"] if b["kind"] == "session"]
+    linked = [b for b in sessions if b.get("drive_id")]
+    if len(linked) != len(drive_slugs):
+        raise SystemExit(f"expected {len(drive_slugs)} linked sessions, found {len(linked)}")
+    by_drive = {s["drive_id"]: slug for s, slug in zip(linked, drive_slugs)}
+    session_by_slug = {slug: s for s, slug in zip(linked, drive_slugs)}
+    for slug, d in dated.items():
+        match = next((b for b in sessions if b.get("date") == d), None)
+        if not match:
+            raise SystemExit(f"no session dated {d} for {slug}")
+        session_by_slug[slug] = match
+        by_drive["date:" + d] = slug
 
     os.makedirs(LESSON_DIR, exist_ok=True)
     for i, slug in enumerate(slugs):
